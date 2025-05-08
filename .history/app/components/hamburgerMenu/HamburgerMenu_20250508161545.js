@@ -16,7 +16,11 @@ export default function HamburgerMenu() {
     { name: "Highlights", href: "/highlights", icon: "/highlightsIcon.png" },
     { name: "Events", href: "/events", icon: "/eventsIcon.png" },
     { name: "Messages", href: "/messages", icon: "/messagesIcon.png" },
-    { name: "Notifications", href: "/notifications", icon: "/notificationsIcon.png",},
+    {
+      name: "Notifications",
+      href: "/notifications",
+      icon: "/notificationsIcon.png",
+    },
     { name: "Settings", href: "/settings", icon: "/settingsIcon.png" },
   ];
 

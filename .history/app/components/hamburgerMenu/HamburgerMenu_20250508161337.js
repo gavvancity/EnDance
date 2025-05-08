@@ -16,7 +16,11 @@ export default function HamburgerMenu() {
     { name: "Highlights", href: "/highlights", icon: "/highlightsIcon.png" },
     { name: "Events", href: "/events", icon: "/eventsIcon.png" },
     { name: "Messages", href: "/messages", icon: "/messagesIcon.png" },
-    { name: "Notifications", href: "/notifications", icon: "/notificationsIcon.png",},
+    {
+      name: "Notifications",
+      href: "/notifications",
+      icon: "/notificationsIcon.png",
+    },
     { name: "Settings", href: "/settings", icon: "/settingsIcon.png" },
   ];
 
@@ -26,34 +30,21 @@ export default function HamburgerMenu() {
         isOpen ? styles.open : ""
       }`}
     >
-      <div className={styles.menuHeaderRow}>
-        {isOpen && (
-          <div className={styles.profileSection}>
-            <Image
-              src="/alyssaProfilePic.png"
-              alt="Alyssa L."
-              width={44}
-              height={44}
-              className={styles.profilePic}
-            />
-            <span className={styles.profileName}>Alyssa L.</span>
-          </div>
-        )}
-        <div className={styles.hamburgerMenuButtonContainer}>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={styles.hamburgerMenuButton}
-          >
-            <Image
-              src="/hamburgerIcon.png"
-              alt="Menu"
-              width={44}
-              height={44}
-              className={styles.hamburgerMenuIcon}
-            />
-          </button>
-        </div>
+      <div className={styles.hamburgerMenuButtonContainer}>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={styles.hamburgerMenuButton}
+        >
+          <Image
+            src="/hamburgerIcon.png"
+            alt="Menu"
+            width={44}
+            height={44}
+            className={styles.hamburgerMenuIcon}
+          />
+        </button>
       </div>
+
       <div className={styles.menuItems}>
         {menuItems.map((item) => (
           <Link
@@ -75,6 +66,7 @@ export default function HamburgerMenu() {
           </Link>
         ))}
       </div>
+
       <div
         className={`${styles.hamburgerMenuOverlay} ${
           isOpen ? styles.open : ""
