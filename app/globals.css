@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-h1: "Karla", sans-serif;
+  --size-h1: 40px;
+  --line-h1: auto;
+  --weight-h1: 600;
 }
 
 @theme inline {
