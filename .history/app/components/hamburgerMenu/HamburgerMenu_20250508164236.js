@@ -58,6 +58,7 @@ export default function HamburgerMenu() {
           </button>
         </div>
       </div>
+      {isOpen && <hr className={styles.divider} />}
       <div className={styles.menuItems}>
         <Link
           key={menuItems[0].name}
@@ -97,6 +98,7 @@ export default function HamburgerMenu() {
             </Link>
           ))}
         </div>
+        <hr className={styles.divider} />
         {menuItems.slice(5).map((item) => (
           <Link
             key={item.name}
@@ -117,16 +119,6 @@ export default function HamburgerMenu() {
           </Link>
         ))}
       </div>
-      {isOpen && (
-        <button
-          className={styles.logoutButton}
-          onClick={() => {
-            /* handle logout here */
-          }}
-        >
-          Log Out
-        </button>
-      )}
       <div
         className={`${styles.hamburgerMenuOverlay} ${
           isOpen ? styles.open : ""

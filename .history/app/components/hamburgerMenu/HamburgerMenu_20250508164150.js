@@ -117,16 +117,6 @@ export default function HamburgerMenu() {
           </Link>
         ))}
       </div>
-      {isOpen && (
-        <button
-          className={styles.logoutButton}
-          onClick={() => {
-            /* handle logout here */
-          }}
-        >
-          Log Out
-        </button>
-      )}
       <div
         className={`${styles.hamburgerMenuOverlay} ${
           isOpen ? styles.open : ""
