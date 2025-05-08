@@ -27,7 +27,7 @@
 }
 
 .hamburgerMenuButton {
-  background-color: transparent;
+  background: var(--color-white);
   border: none;
   cursor: pointer;
   padding: 8px;
@@ -55,14 +55,6 @@
   padding-top: 80px;
   padding-bottom: 20px;
   z-index: 1002;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-}
-
-.hamburgerMenuContainer.open .menuItems {
-  opacity: 1;
-  visibility: visible;
 }
 
 .menuItem {

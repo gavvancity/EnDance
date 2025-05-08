@@ -21,11 +21,7 @@ export default function HamburgerMenu() {
   ];
 
   return (
-    <div
-      className={`${styles.hamburgerMenuContainer} ${
-        isOpen ? styles.open : ""
-      }`}
-    >
+    <div className={styles.hamburgerMenuContainer}>
       <div className={styles.hamburgerMenuButtonContainer}>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -41,7 +37,7 @@ export default function HamburgerMenu() {
         </button>
       </div>
 
-      <div className={styles.menuItems}>
+      <div className={`${styles.menuItems} ${isOpen ? styles.open : ""}`}>
         {menuItems.map((item) => (
           <Link
             key={item.name}
@@ -59,6 +55,10 @@ export default function HamburgerMenu() {
           isOpen ? styles.open : ""
         }`}
       ></div>
+      <div
+        className={`${styles.menuBackdrop} ${isOpen ? styles.open : ""}`}
+        onClick={() => setIsOpen(false)}
+      />
     </div>
   );
 }

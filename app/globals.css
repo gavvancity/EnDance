@@ -140,7 +140,7 @@ body {
   margin: 0;
   font-family: "Karla", sans-serif;
   color: var(--color-black);
-  background-color: var(--color-white);
+  background-color: rgb(223, 223, 223);
 
   max-width: 430px;
   width: 100%;
