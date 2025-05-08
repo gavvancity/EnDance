@@ -1,57 +1,56 @@
-/** @format */
-
 :root {
-  --font-h1: "Karla", sans-serif;
+  --font-h1: 'Karla', sans-serif;
   --size-h1: 40px;
   --line-h1: auto;
   --weight-h1: 600;
 
-  --font-h2: "Karla", sans-serif;
+  --font-h2: 'Karla', sans-serif;
   --size-h2: 33px;
   --line-h2: auto;
   --weight-h2: 600;
 
-  --font-h3: "Karla", sans-serif;
+  --font-h3: 'Karla', sans-serif;
   --size-h3: 25px;
   --line-h3: auto;
   --weight-h3: 600;
 
-  --font-h4: "Karla", sans-serif;
+  --font-h4: 'Karla', sans-serif;
   --size-h4: 16px;
   --line-h4: auto;
   --weight-h4: 600;
 
-  --font-h5: "Karla", sans-serif;
+  --font-h5: 'Karla', sans-serif;
   --size-h5: 14px;
   --line-h5: auto;
   --weight-h5: 600;
 
-  --font-h6: "Karla", sans-serif;
+  --font-h6: 'Karla', sans-serif;
   --size-h6: 12px;
   --line-h6: auto;
   --weight-h6: 600;
 
-  --font-body: "Karla", sans-serif;
+  --font-body: 'Karla', sans-serif;
   --size-body: 16px;
   --line-body: auto;
   --weight-body: 400;
 
-  --font-terms: "Karla", sans-serif;
+  --font-terms: 'Karla', sans-serif;
   --size-terms: 32px;
   --line-terms: auto;
 
-  --font-captions: "Karla", sans-serif;
+  --font-captions: 'Karla', sans-serif;
   --size-captions: 8px;
   --line-captions: auto;
 
-  --font-logo: "Karla", sans-serif;
+  --font-logo: 'Karla', sans-serif;
   --size-logo: 46px;
   --line-logo: auto;
 
-  --font-hamburger: "Karla", sans-serif;
+  --font-hamburger: 'Karla', sans-serif;
   --size-hamburger: 20px;
   --line-hamburger: auto;
 }
+
 
 .h1 {
   font-family: var(--font-h1);
@@ -125,27 +124,30 @@
   font-size: var(--size-hamburger);
   line-height: var(--line-hamburger);
 }
+
 :root {
-  --color-primary-500: #816cc5;
+  --color-primary-500: #816CC5;
 
   --color-neutral-900: #616161;
-  --color-neutral-700: #a5a5a5;
-  --color-neutral-500: #e8e8e8;
+  --color-neutral-700: #A5A5A5;
+  --color-neutral-500: #E8E8E8;
 
   --color-black: #000000;
-  --color-white: #ffffff;
+  --color-white: #FFFFFF;
 }
+
 
 body {
   margin: 0;
-  font-family: "Karla", sans-serif;
+  font-family: 'Karla', sans-serif;
   color: var(--color-black);
   background-color: var(--color-white);
 
-  max-width: 430px;
+  max-width: 430px;      
   width: 100%;
-  margin-inline: auto;
+  margin-inline: auto;   
   height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
 }
+

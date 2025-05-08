@@ -51,6 +51,56 @@
   --font-hamburger: "Karla", sans-serif;
   --size-hamburger: 20px;
   --line-hamburger: auto;
+
+  --color-primary: #007aff;
+  --color-secondary: #5856d6;
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #eeeeee;
+  --color-gray-300: #e0e0e0;
+  --color-gray-400: #bdbdbd;
+  --color-gray-500: #9e9e9e;
+  --color-gray-600: #757575;
+  --color-gray-700: #616161;
+  --color-gray-800: #424242;
+  --color-gray-900: #212121;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #121212;
+    --color-text: #ffffff;
+  }
 }
 
 .h1 {
@@ -124,28 +174,4 @@
   font-family: var(--font-hamburger);
   font-size: var(--size-hamburger);
   line-height: var(--line-hamburger);
-}
-:root {
-  --color-primary-500: #816cc5;
-
-  --color-neutral-900: #616161;
-  --color-neutral-700: #a5a5a5;
-  --color-neutral-500: #e8e8e8;
-
-  --color-black: #000000;
-  --color-white: #ffffff;
-}
-
-body {
-  margin: 0;
-  font-family: "Karla", sans-serif;
-  color: var(--color-black);
-  background-color: var(--color-white);
-
-  max-width: 430px;
-  width: 100%;
-  margin-inline: auto;
-  height: 100vh;
-  box-sizing: border-box;
-  overflow-x: hidden;
 }

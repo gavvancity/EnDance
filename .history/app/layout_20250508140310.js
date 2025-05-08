@@ -1,7 +1,9 @@
+/** @format */
+
 import { Karla } from "next/font/google";
 import "./globals.css";
 
-const karla = Karla({ subsets: ["latin"] });
+const inter = Karla({ subsets: ["latin"] });
 
 export const metadata = {
   title: "EnDance",
@@ -11,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={karla.className}>
+      <body className={inter.className}>
         <div className="app-container">{children}</div>
       </body>
     </html>

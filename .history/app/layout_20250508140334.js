@@ -1,3 +1,5 @@
+/** @format */
+
 import { Karla } from "next/font/google";
 import "./globals.css";
 

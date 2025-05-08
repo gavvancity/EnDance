@@ -1,4 +1,4 @@
-import HamburgerMenu from "./components/hamburgerMenu/HamburgerMenu.js";
+import HamburgerMenu from "./components/hamburgerMenu/HamburgerMenu";
 import "./globals.css";
 import "./components/hamburgerMenu/hamburgerMenu.css";
 
