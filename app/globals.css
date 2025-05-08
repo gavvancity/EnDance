@@ -138,6 +138,16 @@
 
 
 body {
-  color: var(--color-black);
+  margin: 0;
   font-family: 'Karla', sans-serif;
+  color: var(--color-black);
+  background-color: var(--color-white);
+
+  max-width: 430px;      
+  width: 100%;
+  margin-inline: auto;   
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
+
