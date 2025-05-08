@@ -1,6 +1,6 @@
 import HamburgerMenu from "./components/hamburgerMenu/HamburgerMenu.js";
 import "./globals.css";
-import "./components/hamburgerMenu/hamburgerMenu.css";
+
 
 export default function Home() {
   return (

@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "@/app/components/hamburgerMenu/HamburgerMenu.module.css";
+import "./hamburgerMenu.css";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,29 +21,29 @@ export default function HamburgerMenu() {
   ];
 
   return (
-    <div className={styles.hamburgerMenuContainer}>
-      <div className={styles.hamburgerMenuButtonContainer}>
+    <div className="hamburger-menu-container">
+      <div className="hamburger-menu-button-container">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={styles.hamburgerMenuButton}
+          className="hamburger-menu-button"
           aria-label="Toggle menu"
         >
           <Image
             src="/hamburgerIcon.png"
             alt="Menu"
-            width={44}
-            height={44}
-            className={styles.hamburgerMenuIcon}
+            width={32}
+            height={32}
+            className="hamburger-menu-icon"
           />
         </button>
       </div>
 
-      <div className={`menuItems ${isOpen ? "open" : ""}`}>
+      <div className={`menu-items ${isOpen ? "open" : ""}`}>
         {menuItems.map((item) => (
           <Link
             key={item.name}
             href={item.href}
-            className={styles.menuItem}
+            className="menu-item"
             onClick={() => setIsOpen(false)}
           >
             {item.name}
