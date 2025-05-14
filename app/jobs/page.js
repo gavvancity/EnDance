@@ -50,18 +50,25 @@ export default function JobsPage() {
     <main style={{ background: "rgb(255, 255, 255)" }}>
       <div
         style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
+          maxWidth: 440,
           width: "100%",
-          zIndex: 1000,
-          display: "flex",
-          justifyContent: "center",
+          marginInline: "auto",
+          position: "relative",
         }}
       >
-        <HamburgerMenu />
-      </div>
-      <div style={{ height: 100 }} />
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 440,
+            zIndex: 1000,
+          }}
+        >
+          <HamburgerMenu />
+        </div>
+        <div style={{ height: 100 }} />
         {jobs.map((job, idx) => (
           <JobListingCard
             key={idx}
@@ -70,7 +77,7 @@ export default function JobsPage() {
             onBookmark={() => alert(`Bookmark ${job.title}`)}
           />
         ))}
-
+      </div>
     </main>
   );
 }

@@ -25,7 +25,13 @@ const JobListingCard = ({
           className={styles.bookmarkButton}
           aria-label={bookmarked ? "Remove Bookmark" : "Add Bookmark"}
         >
-          {bookmarked ? <span>Bookmarked</span> : <span>Bookmark</span>}
+          <img
+            src={bookmarked ? "/bookmarkFilled.png" : "/bookmark.png"}
+            alt="Bookmark"
+            width={15}
+            height={"auto"}
+            className={bookmarked ? styles.bookmarked : ""}
+          />
         </button>
       </div>
       <div className={styles.location}>{location}</div>
