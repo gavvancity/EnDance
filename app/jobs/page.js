@@ -16,11 +16,38 @@ const jobs = [
       "We are looking for a passionate and energetic Dance Instructor to join our team! As a Dance Instructor at Dance Academy...",
     bookmarked: false,
   },
+  {
+    title: "Choreographer",
+    company: "Dinky Dance Crew",
+    location: "Coquitlam, BC",
+    postedDate: "March 17, 2025",
+    description:
+      "Urban Dance Crew is looking for an innovative and creative Choreographer to join our dynamic team. The ideal candidate will have...",
+    bookmarked: true,
+  },
+  {
+    title: "Contemporary Dance Teacher",
+    company: "Movement Arts Collective",
+    location: "Surrey, BC",
+    postedDate: "March 8, 2025",
+    description:
+      "We are looking for a passionate and energetic Dance Instructor to join our team! As a Dance Instructor...",
+    bookmarked: false,
+  },
+  {
+    title: "Elite Hip Hop Crew",
+    company: "Gravity Syndicate",
+    location: "Vancouver, BC",
+    postedDate: "May 4th 2025",
+    description:
+      "Urban Dance Crew is looking for an innovative and creative Choreographer to join our dynamic team. The ideal candidate will have...",
+    bookmarked: false,
+  },
 ];
 
 export default function JobsPage() {
   return (
-    <body style={{ background: "rgb(223, 223, 223)" }}>
+    <main style={{ background: "rgb(255, 255, 255)" }}>
       <div
         style={{
           position: "fixed",
@@ -35,7 +62,6 @@ export default function JobsPage() {
         <HamburgerMenu />
       </div>
       <div style={{ height: 100 }} />
-      <div>
         {jobs.map((job, idx) => (
           <JobListingCard
             key={idx}
@@ -44,7 +70,7 @@ export default function JobsPage() {
             onBookmark={() => alert(`Bookmark ${job.title}`)}
           />
         ))}
-      </div>
-    </body>
+
+    </main>
   );
 }
