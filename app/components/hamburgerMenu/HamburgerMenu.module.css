@@ -2,7 +2,6 @@
 
 @import "../../globals.css";
 
-/* Hamburger Menu specific styles */
 .hamburgerMenuContainer {
   position: fixed;
   display: flex;
