@@ -149,3 +149,135 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
+
+
+/* Jobs Page */
+.jobsMain {
+  background: rgb(255, 255, 255);
+}
+
+.jobsContainer {
+  max-width: 440px;
+  width: 100%;
+  margin-inline: auto;
+  position: relative;
+}
+
+.jobsTopBar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.jobsSearchBar {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.jobsSearchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-55%);
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.jobsSearchInput {
+  flex: 1;
+  border-radius: 5px;
+  border: 2px solid #616161;
+  padding: 8px 20px 8px 40px;
+  font-size: 16px;
+  outline: none;
+}
+
+.jobsPlusButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.jobsMessagesButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.jobsTabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 12px;
+  padding: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.jobsTab {
+  background: #eee;
+  color: #888;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jobsTabSelected {
+  background: #816cc5;
+  color: #fff;
+  box-shadow: 0 2px 0 #6a4eea;
+}
+
+.jobsSubtabs {
+  display: flex;
+  margin-bottom: 16px;
+  border: 2px solid #816cc5;
+  border-radius: 4px;
+  overflow: hidden;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.jobsSubtab {
+  flex: 1;
+  background: #fff;
+  color: #816cc5;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.jobsSubtabSelected {
+  background: #816cc5;
+  color: #fff;
+}
+
+.jobsFilterRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.jobsFilterIcon {
+  width: 24px;
+  height: 24px;
+  color: transparent;
+  padding: 0;
+  cursor: pointer;
+}

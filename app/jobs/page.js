@@ -62,15 +62,8 @@ export default function JobsPage() {
   };
 
   return (
-    <main style={{ background: "rgb(255, 255, 255)" }}>
-      <div
-        style={{
-          maxWidth: 440,
-          width: "100%",
-          marginInline: "auto",
-          position: "relative",
-        }}
-      >
+    <main className="jobsMain">
+      <div className="jobsContainer">
         <div
           style={{
             position: "fixed",
@@ -85,57 +78,21 @@ export default function JobsPage() {
           <HamburgerMenu />
         </div>
         <div style={{ height: 100 }} />
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 4,
-            margin: "0 0 5px 0",
-            padding: "0px",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
+        {/* Top Bar: Search, Plus, Chat */}
+        <div className="jobsTopBar">
+          <div className="jobsSearchBar">
             <img
               src="/searchicon.png"
               alt="Search"
-              style={{
-                position: "absolute",
-                left: 12,
-                top: "50%",
-                transform: "translateY(-55%)",
-                width: 22,
-                height: 22,
-                pointerEvents: "none",
-              }}
+              className="jobsSearchIcon"
             />
             <input
               type="text"
               placeholder="Search"
-              style={{
-                flex: 1,
-                borderRadius: 5,
-                border: "2px solid #616161",
-                padding: "8px 20px 8px 40px",
-                fontSize: 16,
-                outline: "none",
-              }}
+              className="jobsSearchInput"
             />
           </div>
-          <button
-            style={{
-              background: "transparent",
-              border: "none",
-              padding: 0,
-              marginLeft: "10px",
-            }}
-          >
+          <button className="jobsPlusButton">
             <img
               src="/createpost.png"
               alt="Create Post"
@@ -143,13 +100,7 @@ export default function JobsPage() {
             />
           </button>
           <div style={{ position: "relative" }}>
-            <button
-              style={{
-                background: "transparent",
-                border: "none",
-                padding: 0,
-              }}
-            >
+            <button className="jobsMessagesButton">
               <img
                 src="/messages.png"
                 alt="Messages"
@@ -158,34 +109,9 @@ export default function JobsPage() {
             </button>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 5,
-            margin: "0 0 12px 0",
-            padding: 0,
-            overflowX: "auto",
-            whiteSpace: "nowrap",
-          }}
-        >
-          <button
-            style={{
-              background: "#816cc5",
-              color: "#fff",
-              border: "none",
-              borderRadius: 10,
-              padding: "8px 14px",
-              fontWeight: 400,
-              fontSize: 16,
-              boxShadow: "0 2px 0 #6a4eea",
-              cursor: "pointer",
-              flexShrink: 0,
-              marginRight: 5,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
+        {/* Tabs */}
+        <div className="jobsTabs">
+          <button className="jobsTab jobsTabSelected">
             <img
               src="/jobtab.png"
               alt="Jobs"
@@ -193,23 +119,7 @@ export default function JobsPage() {
             />
             Job Listings
           </button>
-          <button
-            style={{
-              background: "#eee",
-              color: "#888",
-              border: "none",
-              borderRadius: 10,
-              padding: "8px 14px",
-              fontWeight: 400,
-              fontSize: 16,
-              cursor: "pointer",
-              flexShrink: 0,
-              marginRight: 5,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
+          <button className="jobsTab">
             <img
               src="/auditiontab.png"
               alt="Auditions"
@@ -217,23 +127,7 @@ export default function JobsPage() {
             />
             Auditions
           </button>
-          <button
-            style={{
-              background: "#eee",
-              color: "#888",
-              border: "none",
-              borderRadius: 10,
-              padding: "8px 14px",
-              fontWeight: 400,
-              fontSize: 16,
-              cursor: "pointer",
-              flexShrink: 0,
-              marginRight: 5,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
+          <button className="jobsTab">
             <img
               src="/highlightstab.png"
               alt="Highlights"
@@ -241,23 +135,7 @@ export default function JobsPage() {
             />
             Highlights
           </button>
-          <button
-            style={{
-              background: "#eee",
-              color: "#888",
-              border: "none",
-              borderRadius: 10,
-              padding: "8px 14px",
-              fontWeight: 400,
-              fontSize: 16,
-              cursor: "pointer",
-              flexShrink: 0,
-              marginRight: 5,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
+          <button className="jobsTab">
             <img
               src="/eventstab.png"
               alt="Events"
@@ -266,62 +144,15 @@ export default function JobsPage() {
             Events
           </button>
         </div>
-        <div
-          style={{
-            display: "flex",
-            margin: "0 0 16px 0",
-            border: "2px solid #816cc5",
-            borderRadius: 4,
-            overflow: "hidden",
-            fontWeight: 800,
-            fontSize: 16,
-          }}
-        >
-          <button
-            style={{
-              flex: 1,
-              background: "#816cc5",
-              color: "#fff",
-              border: "none",
-              padding: "10px 0",
-              cursor: "pointer",
-            }}
-          >
-            All
-          </button>
-          <button
-            style={{
-              flex: 1,
-              background: "#fff",
-              color: "#816cc5",
-              border: "none",
-              padding: "10px 0",
-              cursor: "pointer",
-            }}
-          >
-            Bookmarks
-          </button>
+        {/* Sub-tabs */}
+        <div className="jobsSubtabs">
+          <button className="jobsSubtab jobsSubtabSelected">All</button>
+          <button className="jobsSubtab">Bookmarks</button>
+          <button className="jobsSubtab">Events</button>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-            margin: "0 0 8px 0",
-            padding: 0,
-          }}
-        >
-          <img
-            src="/filter.png"
-            alt="Filter"
-            style={{
-              width: 24,
-              height: 24,
-              color: "transparent",
-              padding: 0,
-              cursor: "pointer",
-            }}
-          />
+        {/* Filter Row */}
+        <div className="jobsFilterRow">
+          <img src="/filter.png" alt="Filter" className="jobsFilterIcon" />
           <span style={{ fontWeight: 500, fontSize: 25 }}>Filter</span>
         </div>
         {jobs.map((job, idx) => (
