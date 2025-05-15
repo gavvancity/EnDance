@@ -8,6 +8,7 @@ import HamburgerMenu from "@/app/components/hamburgerMenu/HamburgerMenu";
 
 const initialJobs = [
   {
+    id: "1",
     title: "Hip Hop Instructor",
     company: "Dance Academy",
     location: "Vancouver, BC",
@@ -17,24 +18,27 @@ const initialJobs = [
     bookmarked: false,
   },
   {
+    id: "2",
     title: "Jazz Choreographer",
     company: "Dinky Dance Crew",
     location: "Coquitlam, BC",
     postedDate: "March 17, 2025",
     description:
-      "Urban Dance Crew is looking for an innovative and creative Choreographer to join our dynamic team. The ideal candidate will have...",
+      "We’re looking for a creative and dedicated Jazz Choreographer to join our studio family. If you love teaching, creating exciting routines...",
     bookmarked: false,
   },
   {
+    id: "3",
     title: "Contemporary Dance Teacher",
     company: "Movement Arts Collective",
     location: "Surrey, BC",
     postedDate: "March 8, 2025",
     description:
-      "We are looking for a passionate and energetic Dance Instructor to join our team! As a Dance Instructor...",
+      "Looking for a passionate and creative Contemporary Dance Instructor to join our studio team. If you love teaching, choreographing...",
     bookmarked: false,
   },
   {
+    id: "4",
     title: "Hip Hop Crew Choreographer",
     company: "Gravity Syndicate",
     location: "Vancouver, BC",
@@ -309,7 +313,13 @@ export default function JobsPage() {
           <img
             src="/filter.png"
             alt="Filter"
-            style={{ width: 24, height: 24, color: "transparent", padding: 0, cursor: "pointer" }}
+            style={{
+              width: 24,
+              height: 24,
+              color: "transparent",
+              padding: 0,
+              cursor: "pointer",
+            }}
           />
           <span style={{ fontWeight: 500, fontSize: 25 }}>Filter</span>
         </div>
