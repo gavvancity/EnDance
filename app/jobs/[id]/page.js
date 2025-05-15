@@ -1,6 +1,11 @@
 /** @format */
 
+"use client";
+
+/** @format */
+
 import React from "react";
+import Link from "next/link";
 
 const jobs = [
   {
@@ -41,8 +46,68 @@ const jobs = [
   },
 ];
 
+function renderJobDescription(desc) {
+  // Split into sections
+  const sections = desc.split(
+    /(Responsibilities:|Requirements:|What We Offer:)/g
+  );
+  let content = [];
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    if (
+      ["Responsibilities:", "Requirements:", "What We Offer:"].includes(section)
+    ) {
+      // Section title
+      content.push(
+        <h3
+          key={section + i}
+          style={{
+            fontSize: 18,
+            fontWeight: 700,
+            marginTop: 20,
+            marginBottom: 8,
+          }}
+        >
+          {section.replace(":", "")}
+        </h3>
+      );
+      // Next section is the list
+      const next = sections[i + 1] || "";
+      // Split by bullet or newlines
+      const items = next
+        .split(/\n|•/)
+        .map((s) => s.trim())
+        .filter((s) => s.length > 0);
+      content.push(
+        <ul
+          key={section + "-ul" + i}
+          style={{ marginTop: 0, marginBottom: 12, paddingLeft: 22 }}
+        >
+          {items.map((item, idx) => (
+            <li
+              key={section + "-li" + idx}
+              style={{ fontSize: 16, marginBottom: 4 }}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      );
+      i++; // skip next
+    } else if (section.trim().length > 0) {
+      // Regular paragraph
+      content.push(
+        <p key={"p" + i} style={{ fontSize: 16, marginBottom: 8 }}>
+          {section.trim()}
+        </p>
+      );
+    }
+  }
+  return content;
+}
+
 export default function JobDetailPage({ params }) {
-  const { id } = params;
+  const { id } = React.use(params);
   const job = jobs.find((j) => j.id === id);
 
   if (!job) {
@@ -55,8 +120,36 @@ export default function JobDetailPage({ params }) {
   }
 
   return (
-    <div style={{ maxWidth: 440, margin: "0 auto", padding: 24 }}>
-      <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8 }}>
+    <div
+      style={{
+        maxWidth: 440,
+        margin: "0 auto",
+        padding: 24,
+        position: "relative",
+      }}
+    >
+      <Link
+        href="/jobs"
+        style={{
+          position: "absolute",
+          top: 12,
+          left: 0,
+          zIndex: 10,
+          display: "flex",
+          alignItems: "center",
+          background: "none",
+          border: "none",
+          padding: 0,
+          cursor: "pointer",
+        }}
+      >
+        <img
+          src="/back.png"
+          alt="Back"
+          style={{ width: 40, height: 40, marginBottom: 20 }}
+        />
+      </Link>
+      <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 4 }}>
         {job.title}
       </h1>
       <div style={{ fontWeight: 600, fontSize: 20, marginBottom: 4 }}>
@@ -82,6 +175,7 @@ export default function JobDetailPage({ params }) {
           boxShadow: "0 2px 0 #6a4eea",
           cursor: "pointer",
         }}
+        onClick={() => alert(`You have now applied for: ${job.title}`)}
       >
         Apply Now
       </button>
@@ -89,16 +183,7 @@ export default function JobDetailPage({ params }) {
       <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 12 }}>
         About this position
       </h2>
-      <pre
-        style={{
-          fontSize: 16,
-          fontFamily: "Karla",
-          whiteSpace: "pre-wrap",
-          margin: 0,
-        }}
-      >
-        {job.description}
-      </pre>
+      {renderJobDescription(job.description)}
     </div>
   );
 }

@@ -5,6 +5,7 @@
 import React, { useState } from "react";
 import JobListingCard from "@/app/components/JobListingCard";
 import HamburgerMenu from "@/app/components/hamburgerMenu/HamburgerMenu";
+import Link from "next/link";
 
 const initialJobs = [
   {
@@ -24,7 +25,7 @@ const initialJobs = [
     location: "Coquitlam, BC",
     postedDate: "March 17, 2025",
     description:
-      "We’re looking for a creative and dedicated Jazz Choreographer to join our studio family. If you love teaching, creating exciting routines...",
+      "We're looking for a creative and dedicated Jazz Choreographer to join our studio family. If you love teaching, creating exciting routines...",
     bookmarked: false,
   },
   {
@@ -324,12 +325,24 @@ export default function JobsPage() {
           <span style={{ fontWeight: 500, fontSize: 25 }}>Filter</span>
         </div>
         {jobs.map((job, idx) => (
-          <JobListingCard
-            key={idx}
-            {...job}
-            onApply={() => alert(`Apply for ${job.title}`)}
-            onBookmark={() => handleBookmark(idx)}
-          />
+          <Link
+            key={job.id}
+            href={`/jobs/${job.id}`}
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              display: "block",
+            }}
+          >
+            <JobListingCard
+              {...job}
+              onApply={() => alert(`Apply for ${job.title}`)}
+              onBookmark={(e) => {
+                e.preventDefault();
+                handleBookmark(idx);
+              }}
+            />
+          </Link>
         ))}
       </div>
     </main>
