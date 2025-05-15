@@ -32,7 +32,7 @@ export default function SettingsPage() {
         {/* Profile and Settings title */}
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: 32 }}>
           <Image
-            src="nextjs\public\image 8.png"
+            src="/image-8.png"
             alt="Profile"
             width={48}
             height={48}
