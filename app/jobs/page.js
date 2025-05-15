@@ -2,11 +2,11 @@
 
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import JobListingCard from "@/app/components/JobListingCard";
 import HamburgerMenu from "@/app/components/hamburgerMenu/HamburgerMenu";
 
-const jobs = [
+const initialJobs = [
   {
     title: "Hip Hop Instructor",
     company: "Dance Academy",
@@ -46,6 +46,16 @@ const jobs = [
 ];
 
 export default function JobsPage() {
+  const [jobs, setJobs] = useState(initialJobs);
+
+  const handleBookmark = (idx) => {
+    setJobs((prevJobs) =>
+      prevJobs.map((job, i) =>
+        i === idx ? { ...job, bookmarked: !job.bookmarked } : job
+      )
+    );
+  };
+
   return (
     <main style={{ background: "rgb(255, 255, 255)" }}>
       <div
@@ -64,17 +74,197 @@ export default function JobsPage() {
             transform: "translateX(-50%)",
             width: 440,
             zIndex: 1000,
+            background: "rgb(255,255,255)",
           }}
         >
           <HamburgerMenu />
         </div>
         <div style={{ height: 100 }} />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 4,
+            margin: "0 0 5px 0",
+            padding: "0px",
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Search"
+            style={{
+              flex: 1,
+              borderRadius: 5,
+              border: "2px solid #616161",
+              padding: "8px 20px",
+              fontSize: 16,
+              outline: "none",
+            }}
+          />
+          <button
+            style={{
+              background: "transparent",
+              border: "none",
+              padding: 0,
+              marginLeft: "10px",
+            }}
+          >
+            <img
+              src="/createpost.png"
+              alt="Create Post"
+              style={{ width: 40, height: "auto" }}
+            />
+          </button>
+          <div style={{ position: "relative" }}>
+            <button
+              style={{
+                background: "transparent",
+                border: "none",
+                padding: 0,
+              }}
+            >
+              <img
+                src="/messages.png"
+                alt="Messages"
+                style={{ width: 45, height: "auto" }}
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            gap: 5,
+            margin: "0 0 12px 0",
+            padding: 0,
+            overflowX: "auto",
+            whiteSpace: "nowrap",
+          }}
+        >
+          <button
+            style={{
+              background: "#816cc5",
+              color: "#fff",
+              border: "none",
+              borderRadius: 10,
+              padding: "8px 16px",
+              fontWeight: 600,
+              fontSize: 16,
+              boxShadow: "0 2px 0 #6a4eea",
+              cursor: "pointer",
+              flexShrink: 0,
+              marginRight: 5,
+            }}
+          >
+            Job Listings
+          </button>
+          <button
+            style={{
+              background: "#eee",
+              color: "#888",
+              border: "none",
+              borderRadius: 10,
+              padding: "8px 16px",
+              fontWeight: 600,
+              fontSize: 16,
+              cursor: "pointer",
+              flexShrink: 0,
+              marginRight: 5,
+            }}
+          >
+            Auditions
+          </button>
+          <button
+            style={{
+              background: "#eee",
+              color: "#888",
+              border: "none",
+              borderRadius: 10,
+              padding: "8px 16px",
+              fontWeight: 600,
+              fontSize: 16,
+              cursor: "pointer",
+              flexShrink: 0,
+              marginRight: 5,
+            }}
+          >
+            Highlights
+          </button>
+          <button
+            style={{
+              background: "#eee",
+              color: "#888",
+              border: "none",
+              borderRadius: 10,
+              padding: "8px 16px",
+              fontWeight: 600,
+              fontSize: 16,
+              cursor: "pointer",
+              flexShrink: 0,
+              marginRight: 5,
+            }}
+          >
+            Events
+          </button>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            margin: "0 0 16px 0",
+            border: "1.5px solid #816cc5",
+            borderRadius: 4,
+            overflow: "hidden",
+            fontWeight: 600,
+            fontSize: 16,
+          }}
+        >
+          <button
+            style={{
+              flex: 1,
+              background: "#816cc5",
+              color: "#fff",
+              border: "none",
+              padding: "10px 0",
+              cursor: "pointer",
+            }}
+          >
+            Highlights
+          </button>
+          <button
+            style={{
+              flex: 1,
+              background: "#fff",
+              color: "#816cc5",
+              border: "none",
+              padding: "10px 0",
+              cursor: "pointer",
+            }}
+          >
+            Bookmarks
+          </button>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            margin: "0 0 8px 0",
+            padding: 0,
+          }}
+        >
+          <img
+            src="/filter.png"
+            alt="Filter"
+            style={{ width: 24, height: 24, color: "transparent", padding: 0 }}
+          />
+          <span style={{ fontWeight: 500, fontSize: 25 }}>Filter</span>
+        </div>
         {jobs.map((job, idx) => (
           <JobListingCard
             key={idx}
             {...job}
             onApply={() => alert(`Apply for ${job.title}`)}
-            onBookmark={() => alert(`Bookmark ${job.title}`)}
+            onBookmark={() => handleBookmark(idx)}
           />
         ))}
       </div>
