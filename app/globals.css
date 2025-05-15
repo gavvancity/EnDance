@@ -150,7 +150,6 @@ body {
   overflow-x: hidden;
 }
 
-
 /* Jobs Page */
 .jobsMain {
   background: rgb(255, 255, 255);
@@ -280,4 +279,82 @@ body {
   color: transparent;
   padding: 0;
   cursor: pointer;
+}
+
+.jobDetailContainer {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 24px;
+  position: relative;
+}
+
+.jobDetailTitle {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.jobDetailCompany {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.jobDetailLocation {
+  color: #444;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.jobDetailPosted {
+  color: #888;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.jobDetailApplyButton {
+  width: 100%;
+  background: #816cc5;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 0;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 0 #6a4eea;
+  cursor: pointer;
+}
+
+.jobDetailDivider {
+  margin: 24px 0;
+}
+
+.jobDetailSectionHeader {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.jobDetailDescription {
+  font-size: 16px;
+}
+
+.jobDetailBackButton {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.jobDetailBackIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
 }

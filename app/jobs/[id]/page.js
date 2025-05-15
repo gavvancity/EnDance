@@ -112,78 +112,33 @@ export default function JobDetailPage({ params }) {
 
   if (!job) {
     return (
-      <div style={{ maxWidth: 440, margin: "0 auto", padding: 24 }}>
-        <h1>Job Not Found</h1>
+      <div className="jobDetailContainer">
+        <h1 className="jobDetailTitle">Job Not Found</h1>
         <p>No job found for ID: {id}</p>
       </div>
     );
   }
 
   return (
-    <div
-      style={{
-        maxWidth: 440,
-        margin: "0 auto",
-        padding: 24,
-        position: "relative",
-      }}
-    >
-      <Link
-        href="/jobs"
-        style={{
-          position: "absolute",
-          top: 12,
-          left: 0,
-          zIndex: 10,
-          display: "flex",
-          alignItems: "center",
-          background: "none",
-          border: "none",
-          padding: 0,
-          cursor: "pointer",
-        }}
-      >
-        <img
-          src="/back.png"
-          alt="Back"
-          style={{ width: 40, height: 40, marginBottom: 20 }}
-        />
+    <div className="jobDetailContainer">
+      <Link href="/jobs" className="jobDetailBackButton">
+        <img src="/back.png" alt="Back" className="jobDetailBackIcon" />
       </Link>
-      <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 4 }}>
-        {job.title}
-      </h1>
-      <div style={{ fontWeight: 600, fontSize: 20, marginBottom: 4 }}>
-        {job.company}
-      </div>
-      <div style={{ color: "#444", fontSize: 16, marginBottom: 4 }}>
-        Location: {job.location}
-      </div>
-      <div style={{ color: "#888", fontSize: 15, marginBottom: 16 }}>
-        Posted: {job.postedDate}
-      </div>
+      <h1 className="jobDetailTitle">{job.title}</h1>
+      <div className="jobDetailCompany">{job.company}</div>
+      <div className="jobDetailLocation">Location: {job.location}</div>
+      <div className="jobDetailPosted">Posted: {job.postedDate}</div>
       <button
-        style={{
-          width: "100%",
-          background: "#816cc5",
-          color: "#fff",
-          border: "none",
-          borderRadius: 14,
-          padding: "14px 0",
-          fontWeight: 600,
-          fontSize: 18,
-          marginBottom: 24,
-          boxShadow: "0 2px 0 #6a4eea",
-          cursor: "pointer",
-        }}
+        className="jobDetailApplyButton"
         onClick={() => alert(`You have now applied for: ${job.title}`)}
       >
         Apply Now
       </button>
-      <hr style={{ margin: "24px 0" }} />
-      <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 12 }}>
-        About this position
-      </h2>
-      {renderJobDescription(job.description)}
+      <hr className="jobDetailDivider" />
+      <h2 className="jobDetailSectionHeader">About this position</h2>
+      <div className="jobDetailDescription">
+        {renderJobDescription(job.description)}
+      </div>
     </div>
   );
 }
