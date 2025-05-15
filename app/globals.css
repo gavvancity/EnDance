@@ -155,6 +155,13 @@ body {
   background: rgb(255, 255, 255);
 }
 
+.jobsCardsContainer {
+  margin: 16px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
 .jobsContainer {
   max-width: 440px;
   width: 100%;
@@ -191,9 +198,9 @@ body {
 .jobsSearchInput {
   flex: 1;
   border-radius: 5px;
-  border: 2px solid #616161;
+  border: 2px solid var(--color-neutral-900);
   padding: 8px 20px 8px 40px;
-  font-size: 16px;
+  font-size: var(--size-body);
   outline: none;
 }
 
@@ -226,7 +233,7 @@ body {
   border-radius: 10px;
   padding: 8px 14px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--size-body);
   cursor: pointer;
   flex-shrink: 0;
   margin-right: 5px;
@@ -236,33 +243,33 @@ body {
 }
 
 .jobsTabSelected {
-  background: #816cc5;
-  color: #fff;
-  box-shadow: 0 2px 0 #6a4eea;
+  background: var(--color-primary-500);
+  color: var(--color-white);
+  box-shadow: 0 2px 0 var(--color-primary-500);
 }
 
 .jobsSubtabs {
   display: flex;
   margin-bottom: 16px;
-  border: 2px solid #816cc5;
+  border: 2px solid var(--color-primary-500);
   border-radius: 4px;
   overflow: hidden;
   font-weight: 800;
-  font-size: 16px;
+  font-size: var(--size-body);
 }
 
 .jobsSubtab {
   flex: 1;
-  background: #fff;
-  color: #816cc5;
+  background: var(--color-white);
+  color: var(--color-primary-500);
   border: none;
   padding: 10px 0;
   cursor: pointer;
 }
 
 .jobsSubtabSelected {
-  background: #816cc5;
-  color: #fff;
+  background: var(--color-primary-500);
+  color: var(--color-white);
 }
 
 .jobsFilterRow {
@@ -289,40 +296,40 @@ body {
 }
 
 .jobDetailTitle {
-  font-size: 32px;
+  font-size: var(--size-h2);
   font-weight: 700;
   margin-bottom: 4px;
 }
 
 .jobDetailCompany {
   font-weight: 600;
-  font-size: 20px;
+  font-size: var(--size-h3);
   margin-bottom: 4px;
 }
 
 .jobDetailLocation {
-  color: #444;
-  font-size: 16px;
+  color: var(--color-neutral-900);
+  font-size: var(--size-body);
   margin-bottom: 4px;
 }
 
 .jobDetailPosted {
-  color: #888;
-  font-size: 15px;
+  color: var(--color-neutral-700);
+  font-size: var(--size-body);
   margin-bottom: 16px;
 }
 
 .jobDetailApplyButton {
   width: 100%;
-  background: #816cc5;
-  color: #fff;
+  background: var(--color-primary-500);
+  color: var(--color-white);
   border: none;
   border-radius: 14px;
   padding: 14px 0;
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--size-body);
   margin-bottom: 24px;
-  box-shadow: 0 2px 0 #6a4eea;
+  box-shadow: 0 2px 0 var(--color-primary-500);
   cursor: pointer;
 }
 
@@ -331,13 +338,13 @@ body {
 }
 
 .jobDetailSectionHeader {
-  font-size: 24px;
+  font-size: var(--size-h3);
   font-weight: 700;
   margin-bottom: 12px;
 }
 
 .jobDetailDescription {
-  font-size: 16px;
+  font-size: var(--size-body);
 }
 
 .jobDetailBackButton {
@@ -358,3 +365,4 @@ body {
   height: 40px;
   margin-bottom: 20px;
 }
+

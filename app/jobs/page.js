@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import JobListingCard from "@/app/components/JobListingCard";
 import HamburgerMenu from "@/app/components/hamburgerMenu/HamburgerMenu";
 import Link from "next/link";
+import Styles from "@/app/globals.css";
 
 const initialJobs = [
   {
@@ -155,26 +156,28 @@ export default function JobsPage() {
           <img src="/filter.png" alt="Filter" className="jobsFilterIcon" />
           <span style={{ fontWeight: 500, fontSize: 25 }}>Filter</span>
         </div>
-        {jobs.map((job, idx) => (
-          <Link
-            key={job.id}
-            href={`/jobs/${job.id}`}
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              display: "block",
-            }}
-          >
-            <JobListingCard
-              {...job}
-              onApply={() => alert(`Apply for ${job.title}`)}
-              onBookmark={(e) => {
-                e.preventDefault();
-                handleBookmark(idx);
+        <div className="jobsCardsContainer">
+          {jobs.map((job, idx) => (
+            <Link
+              key={job.id}
+              href={`/jobs/${job.id}`}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                display: "block",
               }}
-            />
-          </Link>
-        ))}
+            >
+              <JobListingCard
+                {...job}
+                onApply={() => alert(`Apply for ${job.title}`)}
+                onBookmark={(e) => {
+                  e.preventDefault();
+                  handleBookmark(idx);
+                }}
+              />
+            </Link>
+          ))}
+        </div>
       </div>
     </main>
   );
