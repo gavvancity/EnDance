@@ -17,13 +17,13 @@ const initialJobs = [
     bookmarked: false,
   },
   {
-    title: "Choreographer",
+    title: "Jazz Choreographer",
     company: "Dinky Dance Crew",
     location: "Coquitlam, BC",
     postedDate: "March 17, 2025",
     description:
       "Urban Dance Crew is looking for an innovative and creative Choreographer to join our dynamic team. The ideal candidate will have...",
-    bookmarked: true,
+    bookmarked: false,
   },
   {
     title: "Contemporary Dance Teacher",
@@ -35,7 +35,7 @@ const initialJobs = [
     bookmarked: false,
   },
   {
-    title: "Elite Hip Hop Crew",
+    title: "Hip Hop Crew Choreographer",
     company: "Gravity Syndicate",
     location: "Vancouver, BC",
     postedDate: "May 4th 2025",
@@ -89,18 +89,40 @@ export default function JobsPage() {
             padding: "0px",
           }}
         >
-          <input
-            type="text"
-            placeholder="Search"
+          <div
             style={{
+              position: "relative",
               flex: 1,
-              borderRadius: 5,
-              border: "2px solid #616161",
-              padding: "8px 20px",
-              fontSize: 16,
-              outline: "none",
+              display: "flex",
+              alignItems: "center",
             }}
-          />
+          >
+            <img
+              src="/searchicon.png"
+              alt="Search"
+              style={{
+                position: "absolute",
+                left: 12,
+                top: "50%",
+                transform: "translateY(-55%)",
+                width: 22,
+                height: 22,
+                pointerEvents: "none",
+              }}
+            />
+            <input
+              type="text"
+              placeholder="Search"
+              style={{
+                flex: 1,
+                borderRadius: 5,
+                border: "2px solid #616161",
+                padding: "8px 20px 8px 40px",
+                fontSize: 16,
+                outline: "none",
+              }}
+            />
+          </div>
           <button
             style={{
               background: "transparent",
@@ -147,15 +169,23 @@ export default function JobsPage() {
               color: "#fff",
               border: "none",
               borderRadius: 10,
-              padding: "8px 16px",
-              fontWeight: 600,
+              padding: "8px 14px",
+              fontWeight: 400,
               fontSize: 16,
               boxShadow: "0 2px 0 #6a4eea",
               cursor: "pointer",
               flexShrink: 0,
               marginRight: 5,
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
             }}
           >
+            <img
+              src="/jobtab.png"
+              alt="Jobs"
+              style={{ width: 18, height: 18 }}
+            />
             Job Listings
           </button>
           <button
@@ -164,14 +194,22 @@ export default function JobsPage() {
               color: "#888",
               border: "none",
               borderRadius: 10,
-              padding: "8px 16px",
-              fontWeight: 600,
+              padding: "8px 14px",
+              fontWeight: 400,
               fontSize: 16,
               cursor: "pointer",
               flexShrink: 0,
               marginRight: 5,
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
             }}
           >
+            <img
+              src="/auditiontab.png"
+              alt="Auditions"
+              style={{ width: 18, height: 18 }}
+            />
             Auditions
           </button>
           <button
@@ -180,14 +218,22 @@ export default function JobsPage() {
               color: "#888",
               border: "none",
               borderRadius: 10,
-              padding: "8px 16px",
-              fontWeight: 600,
+              padding: "8px 14px",
+              fontWeight: 400,
               fontSize: 16,
               cursor: "pointer",
               flexShrink: 0,
               marginRight: 5,
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
             }}
           >
+            <img
+              src="/highlightstab.png"
+              alt="Highlights"
+              style={{ width: 18, height: 18 }}
+            />
             Highlights
           </button>
           <button
@@ -196,14 +242,22 @@ export default function JobsPage() {
               color: "#888",
               border: "none",
               borderRadius: 10,
-              padding: "8px 16px",
-              fontWeight: 600,
+              padding: "8px 14px",
+              fontWeight: 400,
               fontSize: 16,
               cursor: "pointer",
               flexShrink: 0,
               marginRight: 5,
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
             }}
           >
+            <img
+              src="/eventstab.png"
+              alt="Events"
+              style={{ width: 18, height: 18 }}
+            />
             Events
           </button>
         </div>
@@ -211,10 +265,10 @@ export default function JobsPage() {
           style={{
             display: "flex",
             margin: "0 0 16px 0",
-            border: "1.5px solid #816cc5",
+            border: "2px solid #816cc5",
             borderRadius: 4,
             overflow: "hidden",
-            fontWeight: 600,
+            fontWeight: 800,
             fontSize: 16,
           }}
         >
@@ -228,7 +282,7 @@ export default function JobsPage() {
               cursor: "pointer",
             }}
           >
-            Highlights
+            All
           </button>
           <button
             style={{
@@ -255,7 +309,7 @@ export default function JobsPage() {
           <img
             src="/filter.png"
             alt="Filter"
-            style={{ width: 24, height: 24, color: "transparent", padding: 0 }}
+            style={{ width: 24, height: 24, color: "transparent", padding: 0, cursor: "pointer" }}
           />
           <span style={{ fontWeight: 500, fontSize: 25 }}>Filter</span>
         </div>
