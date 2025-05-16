@@ -65,20 +65,10 @@ export default function JobsPage() {
   return (
     <main className="jobsMain">
       <div className="jobsContainer">
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: 440,
-            zIndex: 1000,
-            background: "rgb(255,255,255)",
-          }}
-        >
+        <div className="jobsHamburgerFixed">
           <HamburgerMenu />
         </div>
-        <div style={{ height: 100 }} />
+        <div className="jobsHamburgerSpacer" />
         {/* Top Bar: Search, Plus, Chat */}
         <div className="jobsTopBar">
           <div className="jobsSearchBar">
@@ -97,7 +87,7 @@ export default function JobsPage() {
             <img
               src="/createpost.png"
               alt="Create Post"
-              style={{ width: 40, height: "auto" }}
+              className="jobsCreatePostIcon"
             />
           </button>
           <div style={{ position: "relative" }}>
@@ -105,7 +95,7 @@ export default function JobsPage() {
               <img
                 src="/messages.png"
                 alt="Messages"
-                style={{ width: 45, height: "auto" }}
+                className="jobsMessagesIcon"
               />
             </button>
           </div>
@@ -148,8 +138,7 @@ export default function JobsPage() {
         {/* Sub-tabs */}
         <div className="jobsSubtabs">
           <button className="jobsSubtab jobsSubtabSelected">All</button>
-          <button className="jobsSubtab">Bookmarks</button>
-          <button className="jobsSubtab">Events</button>
+          <button className="jobsSubtab">Bookmarked</button>
         </div>
         {/* Filter Row */}
         <div className="jobsFilterRow">
@@ -161,14 +150,11 @@ export default function JobsPage() {
             <Link
               key={job.id}
               href={`/jobs/${job.id}`}
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "block",
-              }}
+              className="jobsCardLink"
             >
               <JobListingCard
                 {...job}
+                className="jobsCardFullWidth"
                 onApply={() => alert(`Apply for ${job.title}`)}
                 onBookmark={(e) => {
                   e.preventDefault();

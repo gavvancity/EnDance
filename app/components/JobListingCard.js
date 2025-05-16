@@ -28,7 +28,7 @@ const JobListingCard = ({
           <img
             src={bookmarked ? "/bookmarkFilled.png" : "/bookmark.png"}
             alt="Bookmark"
-            width={15}
+            width={20}
             height={"auto"}
             className={bookmarked ? styles.bookmarked : ""}
           />

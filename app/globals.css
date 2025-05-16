@@ -292,7 +292,6 @@ body {
   max-width: 440px;
   margin: 0 auto;
   padding: 24px;
-  position: relative;
 }
 
 .jobDetailTitle {
@@ -366,3 +365,41 @@ body {
   margin-bottom: 20px;
 }
 
+.jobsHamburgerFixed {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 440px;
+  z-index: 1000;
+  background: rgb(255, 255, 255);
+}
+
+.jobsCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.jobsFilterLabel {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.jobsHamburgerSpacer {
+  height: 100px;
+  width: 100%;
+}
+
+.jobsCreatePostIcon {
+  width: 40px;
+  height: auto;
+}
+
+.jobsMessagesIcon {
+  width: 45px;
+  height: auto;
+}
