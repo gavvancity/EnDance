@@ -8,6 +8,7 @@ import HamburgerMenu from "@/app/components/hamburgerMenu/HamburgerMenu";
 import Link from "next/link";
 import Styles from "@/app/globals.css";
 import { useBookmarks } from "@/app/bookmarkedContext/BookmarkContext";
+import FilterOverlay from "@/app/components/FilterOverlay";
 
 const jobs = [
   {
@@ -50,6 +51,7 @@ const jobs = [
 
 export default function BookmarkedJobsPage() {
   const { bookmarkedIds, toggleBookmark } = useBookmarks();
+  const [showFilterOverlay, setShowFilterOverlay] = React.useState(false);
   const bookmarkedJobs = jobs.filter((job) => bookmarkedIds.includes(job.id));
 
   return (
@@ -157,6 +159,15 @@ export default function BookmarkedJobsPage() {
             Bookmarked
           </Link>
         </div>
+        {/* Filter Row */}
+        <div
+          className="jobsFilterRow"
+          onClick={() => setShowFilterOverlay(true)}
+          style={{ cursor: "pointer" }}
+        >
+          <img src="/filter.png" alt="Filter" className="jobsFilterIcon" />
+          <span className="filterLabel">Filter</span>
+        </div>
         <div className="jobsCardsContainer">
           {bookmarkedJobs.length === 0 ? (
             <div style={{ textAlign: "center", marginTop: 40 }}>
@@ -184,6 +195,10 @@ export default function BookmarkedJobsPage() {
           )}
         </div>
       </div>
+      <FilterOverlay
+        isOpen={showFilterOverlay}
+        onClose={() => setShowFilterOverlay(false)}
+      />
     </main>
   );
 }
