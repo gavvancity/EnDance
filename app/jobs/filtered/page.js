@@ -2,12 +2,13 @@
 
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import JobListingCard from "@/app/components/JobListingCard";
 import HamburgerMenu from "@/app/components/hamburgerMenu/HamburgerMenu";
+import FilterOverlay from "@/app/components/FilterOverlay";
 import Link from "next/link";
 import Styles from "@/app/globals.css";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const allJobs = [
   {
@@ -19,6 +20,7 @@ const allJobs = [
     description:
       "We are looking for a passionate and energetic Dance Instructor to join our team! As a Dance Instructor at Dance Academy...",
     bookmarked: false,
+    keywords: ["Hip Hop", "Vancouver"],
   },
   {
     id: "4",
@@ -29,29 +31,66 @@ const allJobs = [
     description:
       "Urban Dance Crew is looking for an innovative and creative Choreographer to join our dynamic team. The ideal candidate will have...",
     bookmarked: false,
+    keywords: ["Hip Hop", "Vancouver"],
+  },
+  {
+    id: "2",
+    title: "Jazz Choreographer",
+    company: "Dinky Dance Crew",
+    location: "Coquitlam, BC",
+    postedDate: "March 17, 2025",
+    description:
+      "We're looking for a creative and dedicated Jazz Choreographer to join our studio family...",
+    bookmarked: false,
+    keywords: ["Jazz", "Coquitlam"],
+  },
+  {
+    id: "3",
+    title: "Contemporary Dance Teacher",
+    company: "Movement Arts Collective",
+    location: "Surrey, BC",
+    postedDate: "March 8, 2025",
+    description:
+      "Bring your artistry to life and inspire dancers through contemporary movement!...",
+    bookmarked: false,
+    keywords: ["Contemporary", "Surrey"],
   },
 ];
 
 export default function FilteredJobsPage() {
+  const [showFilterOverlay, setShowFilterOverlay] = useState(false);
+  const router = useRouter();
   const searchParams = useSearchParams();
+  // Support multiple keywords: /jobs/filtered?keywords=Hip%20Hop&keywords=Vancouver
+  const keywords = searchParams.getAll("keywords");
+
+  // If using old ?location=...&style=... params, add them to keywords
   const location = searchParams.get("location");
   const style = searchParams.get("style");
+  let allSelected = [...keywords];
+  if (location && !allSelected.includes(location)) allSelected.push(location);
+  if (style && !allSelected.includes(style)) allSelected.push(style);
 
+  // Filter jobs by keywords
   let filteredJobs = allJobs;
-  if (location) {
-    filteredJobs = filteredJobs.filter((job) =>
-      job.location.toLowerCase().includes(location.toLowerCase())
-    );
-  }
-  if (style) {
-    filteredJobs = filteredJobs.filter((job) =>
-      job.title.toLowerCase().includes(style.toLowerCase())
+  if (allSelected.length > 0) {
+    filteredJobs = allJobs.filter((job) =>
+      allSelected.every((kw) =>
+        job.keywords.map((k) => k.toLowerCase()).includes(kw.toLowerCase())
+      )
     );
   }
 
   return (
     <main className="jobsMain">
       <div className="jobsContainer">
+        <button
+          className="jobDetailBackButton"
+          onClick={() => router.back()}
+          style={{ margin: "24px 0 0 0" }}
+        >
+          <img src="/back.png" alt="Back" className="jobDetailBackIcon" />
+        </button>
         <div className="jobsHamburgerFixed">
           <HamburgerMenu />
         </div>
@@ -128,11 +167,18 @@ export default function FilteredJobsPage() {
           <button className="jobsSubtab">Bookmarked</button>
         </div>
         {/* Filter Row with tags */}
-        <div className="jobsFilterRow">
+        <div
+          className="jobsFilterRow"
+          onClick={() => setShowFilterOverlay(true)}
+          style={{ cursor: "pointer" }}
+        >
           <img src="/filter.png" alt="Filter" className="jobsFilterIcon" />
           <span className="filterLabel">Filter</span>
-          {style && <span className="filterTag">{style}</span>}
-          {location && <span className="filterTag">{location}</span>}
+          {allSelected.map((kw) => (
+            <span className="filterTag" key={kw}>
+              {kw}
+            </span>
+          ))}
         </div>
         <div className="jobsCardsContainer">
           {filteredJobs.map((job) => (
@@ -150,6 +196,10 @@ export default function FilteredJobsPage() {
             </Link>
           ))}
         </div>
+        <FilterOverlay
+          isOpen={showFilterOverlay}
+          onClose={() => setShowFilterOverlay(false)}
+        />
       </div>
     </main>
   );

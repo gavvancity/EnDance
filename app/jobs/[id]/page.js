@@ -2,7 +2,7 @@
 
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 const jobs = [
@@ -107,6 +107,7 @@ function renderJobDescription(desc) {
 export default function JobDetailPage({ params }) {
   const { id } = React.use(params);
   const job = jobs.find((j) => j.id === id);
+  const [bookmarked, setBookmarked] = useState(false);
 
   if (!job) {
     return (
@@ -122,7 +123,37 @@ export default function JobDetailPage({ params }) {
       <Link href="/jobs" className="jobDetailBackButton">
         <img src="/back.png" alt="Back" className="jobDetailBackIcon" />
       </Link>
-      <h1 className="jobDetailTitle">{job.title}</h1>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 12,
+        }}
+      >
+        <h1 className="jobDetailTitle" style={{ margin: 0 }}>
+          {job.title}
+        </h1>
+        <button
+          onClick={() => setBookmarked((b) => !b)}
+          className="jobDetailBookmarkButton"
+          aria-label={bookmarked ? "Remove Bookmark" : "Add Bookmark"}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            padding: 0,
+          }}
+        >
+          <img
+            src={bookmarked ? "/bookmarkFilled.png" : "/bookmark.png"}
+            alt="Bookmark"
+            width={28}
+            height={"auto"}
+            style={{ display: "block" }}
+          />
+        </button>
+      </div>
       <div className="jobDetailCompany">{job.company}</div>
       <div className="jobDetailLocation">Location: {job.location}</div>
       <div className="jobDetailPosted">Posted: {job.postedDate}</div>
