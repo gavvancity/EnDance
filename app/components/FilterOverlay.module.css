@@ -35,4 +35,61 @@
   pointer-events: auto;
   position: relative;
   z-index: 1;
+  background: #fff;
+  border-radius: 22px;
+  box-sizing: border-box;
+  padding: 18px 16px 12px 16px;
+  min-height: 420px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.filterOverlay__toggleButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-size: 20px;
+  color: #555;
+  font-weight: 500;
+  padding: 2px 12px 2px 2px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.filterOverlay__toggleButton.selected {
+  background: #fff;
+  color: #222;
+  border-color: transparent;
+}
+
+.filterOverlay__radio {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid #666;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.filterOverlay__toggleButton.selected .filterOverlay__radio {
+  border-color: #666;
+}
+
+.filterOverlay__radioInner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.filterOverlay__toggleButton.selected .filterOverlay__radioInner {
+  background: #666;
 }

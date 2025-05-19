@@ -1,10 +1,49 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import styles from "./FilterOverlay.module.css";
 
+const LOCATIONS = [
+  "Vancouver",
+  "Victoria",
+  "Surrey",
+  "Nanaimo",
+  "Richmond",
+  "Langley",
+  "Burnaby",
+  "Kelowna",
+  "Coquitlam",
+  "Abbotsford",
+];
+const DANCE_STYLES = [
+  "Hip Hop",
+  "Modern",
+  "Ballet",
+  "Ballroom",
+  "Jazz",
+  "Breakdance",
+  "Contemporary",
+  "Latin",
+  "Tap",
+  "Lyrical",
+];
+
 export default function FilterOverlay({ isOpen, onClose }) {
+  const [selectedLocations, setSelectedLocations] = useState([]);
+  const [selectedStyles, setSelectedStyles] = useState([]);
+
   if (!isOpen) return null;
+
+  const toggleLocation = (loc) => {
+    setSelectedLocations((prev) =>
+      prev.includes(loc) ? prev.filter((l) => l !== loc) : [...prev, loc]
+    );
+  };
+  const toggleStyle = (style) => {
+    setSelectedStyles((prev) =>
+      prev.includes(style) ? prev.filter((s) => s !== style) : [...prev, style]
+    );
+  };
 
   return (
     <div className={styles.filterOverlay__container}>
@@ -28,36 +67,24 @@ export default function FilterOverlay({ isOpen, onClose }) {
                 styles.filterOverlay__buttonGrid
               }
             >
-              <button className={styles.filterOverlay__toggleButton}>
-                Vancouver
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Victoria
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Surrey
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Nanaimo
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Richmond
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Langley
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Burnaby
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Kelowna
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Coquitlam
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Abbotsford
-              </button>
+              {LOCATIONS.map((loc) => (
+                <button
+                  key={loc}
+                  className={
+                    styles.filterOverlay__toggleButton +
+                    (selectedLocations.includes(loc)
+                      ? " " + styles.selected
+                      : "")
+                  }
+                  onClick={() => toggleLocation(loc)}
+                  type="button"
+                >
+                  <span className={styles.filterOverlay__radio}>
+                    <span className={styles.filterOverlay__radioInner}></span>
+                  </span>
+                  {loc}
+                </button>
+              ))}
             </div>
           </div>
           <div>
@@ -71,36 +98,24 @@ export default function FilterOverlay({ isOpen, onClose }) {
                 styles.filterOverlay__buttonGrid
               }
             >
-              <button className={styles.filterOverlay__toggleButton}>
-                Hip Hop
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Modern
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Ballet
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Ballroom
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Jazz
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Breakdance
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Contemporary
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Latin
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Tap
-              </button>
-              <button className={styles.filterOverlay__toggleButton}>
-                Lyrical
-              </button>
+              {DANCE_STYLES.map((style) => (
+                <button
+                  key={style}
+                  className={
+                    styles.filterOverlay__toggleButton +
+                    (selectedStyles.includes(style)
+                      ? " " + styles.selected
+                      : "")
+                  }
+                  onClick={() => toggleStyle(style)}
+                  type="button"
+                >
+                  <span className={styles.filterOverlay__radio}>
+                    <span className={styles.filterOverlay__radioInner}></span>
+                  </span>
+                  {style}
+                </button>
+              ))}
             </div>
           </div>
         </div>
