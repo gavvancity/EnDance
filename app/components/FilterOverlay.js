@@ -49,14 +49,16 @@ export default function FilterOverlay({ isOpen, onClose }) {
     <div className={styles.filterOverlay__container}>
       <div className={styles.filterOverlayBackdrop} onClick={onClose} />
       <div className={styles.filterOverlay}>
-        <button
-          onClick={onClose}
-          className={styles.filterOverlay__closeButton}
-          aria-label="Close filter overlay"
-        >
-          ×
-        </button>
-        <h2 className={styles.filterOverlay__heading}>Filter</h2>
+        <div className={styles.filterOverlay__headerRow}>
+          <h2 className={styles.filterOverlay__heading}>Filter</h2>
+          <button
+            onClick={onClose}
+            className={styles.filterOverlay__closeButton}
+            aria-label="Close filter overlay"
+          >
+            ×
+          </button>
+        </div>
         <div className={styles.filterOverlay__sections}>
           <div>
             <span className={styles.filterOverlay__sectionLabel}>LOCATION</span>
@@ -119,6 +121,9 @@ export default function FilterOverlay({ isOpen, onClose }) {
             </div>
           </div>
         </div>
+        <button className={styles.filterOverlay__applyButton} type="button">
+          Apply
+        </button>
       </div>
     </div>
   );
