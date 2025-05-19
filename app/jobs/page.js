@@ -5,6 +5,7 @@
 import React, { useState } from "react";
 import JobListingCard from "@/app/components/JobListingCard";
 import HamburgerMenu from "@/app/components/hamburgerMenu/HamburgerMenu";
+import FilterOverlay from "@/app/components/FilterOverlay";
 import Link from "next/link";
 import Styles from "@/app/globals.css";
 
@@ -53,6 +54,7 @@ const initialJobs = [
 
 export default function JobsPage() {
   const [jobs, setJobs] = useState(initialJobs);
+  const [showFilterOverlay, setShowFilterOverlay] = useState(false);
 
   const handleBookmark = (idx) => {
     setJobs((prevJobs) =>
@@ -141,7 +143,11 @@ export default function JobsPage() {
           <button className="jobsSubtab">Bookmarked</button>
         </div>
         {/* Filter Row */}
-        <div className="jobsFilterRow">
+        <div
+          className="jobsFilterRow"
+          onClick={() => setShowFilterOverlay(true)}
+          style={{ cursor: "pointer" }}
+        >
           <img src="/filter.png" alt="Filter" className="jobsFilterIcon" />
           <span style={{ fontWeight: 500, fontSize: 25 }}>Filter</span>
         </div>
@@ -164,6 +170,10 @@ export default function JobsPage() {
             </Link>
           ))}
         </div>
+        <FilterOverlay
+          isOpen={showFilterOverlay}
+          onClose={() => setShowFilterOverlay(false)}
+        />
       </div>
     </main>
   );
