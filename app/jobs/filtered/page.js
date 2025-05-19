@@ -9,6 +9,7 @@ import FilterOverlay from "@/app/components/FilterOverlay";
 import Link from "next/link";
 import Styles from "@/app/globals.css";
 import { useSearchParams, useRouter } from "next/navigation";
+import { useBookmarks } from "@/app/bookmarkedContext/BookmarkContext";
 
 const allJobs = [
   {
@@ -61,6 +62,7 @@ export default function FilteredJobsPage() {
   const [showFilterOverlay, setShowFilterOverlay] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { bookmarkedIds, toggleBookmark } = useBookmarks();
   // Support multiple keywords: /jobs/filtered?keywords=Hip%20Hop&keywords=Vancouver
   const keywords = searchParams.getAll("keywords");
 
@@ -163,8 +165,12 @@ export default function FilteredJobsPage() {
         </div>
         {/* Sub-tabs */}
         <div className="jobsSubtabs">
-          <button className="jobsSubtab jobsSubtabSelected">All</button>
-          <button className="jobsSubtab">Bookmarked</button>
+          <Link href="/jobs" className="jobsSubtab jobsSubtabSelected">
+            All
+          </Link>
+          <Link href="/jobs/bookmarked" className="jobsSubtab">
+            Bookmarked
+          </Link>
         </div>
         {/* Filter Row with tags */}
         <div
@@ -189,9 +195,13 @@ export default function FilteredJobsPage() {
             >
               <JobListingCard
                 {...job}
+                bookmarked={bookmarkedIds.includes(job.id)}
                 className="jobsCardFullWidth"
                 onApply={() => alert(`Apply for ${job.title}`)}
-                onBookmark={() => {}}
+                onBookmark={(e) => {
+                  e.preventDefault();
+                  toggleBookmark(job.id);
+                }}
               />
             </Link>
           ))}

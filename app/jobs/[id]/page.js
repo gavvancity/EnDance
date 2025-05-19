@@ -2,8 +2,9 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
+import { useBookmarks } from "@/app/bookmarkedContext/BookmarkContext";
 
 const jobs = [
   {
@@ -105,9 +106,12 @@ function renderJobDescription(desc) {
 }
 
 export default function JobDetailPage({ params }) {
-  const { id } = React.use(params);
-  const job = jobs.find((j) => j.id === id);
-  const [bookmarked, setBookmarked] = useState(false);
+  const resolvedParams = React.use(params);
+  const { id } = resolvedParams;
+  const { bookmarkedIds, toggleBookmark } = useBookmarks();
+  const jobIndex = jobs.findIndex((j) => j.id === id);
+  const job = jobIndex !== -1 ? jobs[jobIndex] : null;
+  const isBookmarked = bookmarkedIds.includes(id);
 
   if (!job) {
     return (
@@ -135,9 +139,9 @@ export default function JobDetailPage({ params }) {
           {job.title}
         </h1>
         <button
-          onClick={() => setBookmarked((b) => !b)}
+          onClick={() => toggleBookmark(id)}
           className="jobDetailBookmarkButton"
-          aria-label={bookmarked ? "Remove Bookmark" : "Add Bookmark"}
+          aria-label={isBookmarked ? "Remove Bookmark" : "Add Bookmark"}
           style={{
             background: "none",
             border: "none",
@@ -146,7 +150,7 @@ export default function JobDetailPage({ params }) {
           }}
         >
           <img
-            src={bookmarked ? "/bookmarkFilled.png" : "/bookmark.png"}
+            src={isBookmarked ? "/bookmarkFilled.png" : "/bookmark.png"}
             alt="Bookmark"
             width={28}
             height={"auto"}

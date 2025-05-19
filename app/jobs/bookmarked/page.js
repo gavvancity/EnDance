@@ -2,15 +2,14 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import JobListingCard from "@/app/components/JobListingCard";
 import HamburgerMenu from "@/app/components/hamburgerMenu/HamburgerMenu";
-import FilterOverlay from "@/app/components/FilterOverlay";
 import Link from "next/link";
 import Styles from "@/app/globals.css";
 import { useBookmarks } from "@/app/bookmarkedContext/BookmarkContext";
 
-const initialJobs = [
+const jobs = [
   {
     id: "1",
     title: "Hip Hop Instructor",
@@ -19,7 +18,6 @@ const initialJobs = [
     postedDate: "March 8, 2025",
     description:
       "We are looking for a passionate and energetic Dance Instructor to join our team! As a Dance Instructor at Dance Academy...",
-    bookmarked: false,
   },
   {
     id: "2",
@@ -28,8 +26,7 @@ const initialJobs = [
     location: "Coquitlam, BC",
     postedDate: "March 17, 2025",
     description:
-      "We're looking for a creative and dedicated Jazz Choreographer to join our studio family. If you love teaching, creating exciting routines...",
-    bookmarked: false,
+      "We're looking for a creative and dedicated Jazz Choreographer to join our studio family...",
   },
   {
     id: "3",
@@ -39,24 +36,12 @@ const initialJobs = [
     postedDate: "March 8, 2025",
     description:
       "Looking for a passionate and creative Contemporary Dance Instructor to join our studio team. If you love teaching, choreographing...",
-    bookmarked: false,
-  },
-  {
-    id: "4",
-    title: "Hip Hop Crew Choreographer",
-    company: "Gravity Syndicate",
-    location: "Vancouver, BC",
-    postedDate: "May 4th 2025",
-    description:
-      "Urban Dance Crew is looking for an innovative and creative Choreographer to join our dynamic team. The ideal candidate will have...",
-    bookmarked: false,
   },
 ];
 
-export default function JobsPage() {
-  const [jobs] = useState(initialJobs);
-  const [showFilterOverlay, setShowFilterOverlay] = useState(false);
+export default function BookmarkedJobsPage() {
   const { bookmarkedIds, toggleBookmark } = useBookmarks();
+  const bookmarkedJobs = jobs.filter((job) => bookmarkedIds.includes(job.id));
 
   return (
     <main className="jobsMain">
@@ -133,46 +118,42 @@ export default function JobsPage() {
         </div>
         {/* Sub-tabs */}
         <div className="jobsSubtabs">
-          <Link href="/jobs" className="jobsSubtab jobsSubtabSelected">
+          <Link href="/jobs" className="jobsSubtab">
             All
           </Link>
-          <Link href="/jobs/bookmarked" className="jobsSubtab">
+          <Link
+            href="/jobs/bookmarked"
+            className="jobsSubtab jobsSubtabSelected"
+          >
             Bookmarked
           </Link>
         </div>
-        {/* Filter Row */}
-        <div
-          className="jobsFilterRow"
-          onClick={() => setShowFilterOverlay(true)}
-          style={{ cursor: "pointer" }}
-        >
-          <img src="/filter.png" alt="Filter" className="jobsFilterIcon" />
-          <span className="filterLabel">Filter</span>
-        </div>
         <div className="jobsCardsContainer">
-          {jobs.map((job) => (
-            <Link
-              key={job.id}
-              href={`/jobs/${job.id}`}
-              className="jobsCardLink"
-            >
-              <JobListingCard
-                {...job}
-                bookmarked={bookmarkedIds.includes(job.id)}
-                className="jobsCardFullWidth"
-                onApply={() => alert(`Apply for ${job.title}`)}
-                onBookmark={(e) => {
-                  e.preventDefault();
-                  toggleBookmark(job.id);
-                }}
-              />
-            </Link>
-          ))}
+          {bookmarkedJobs.length === 0 ? (
+            <div style={{ textAlign: "center", marginTop: 40 }}>
+              <p>No bookmarked jobs found.</p>
+            </div>
+          ) : (
+            bookmarkedJobs.map((job) => (
+              <Link
+                key={job.id}
+                href={`/jobs/${job.id}`}
+                className="jobsCardLink"
+              >
+                <JobListingCard
+                  {...job}
+                  bookmarked={true}
+                  className="jobsCardFullWidth"
+                  onApply={() => alert(`Apply for ${job.title}`)}
+                  onBookmark={(e) => {
+                    e.preventDefault();
+                    toggleBookmark(job.id);
+                  }}
+                />
+              </Link>
+            ))
+          )}
         </div>
-        <FilterOverlay
-          isOpen={showFilterOverlay}
-          onClose={() => setShowFilterOverlay(false)}
-        />
       </div>
     </main>
   );

@@ -1,5 +1,8 @@
+/** @format */
+
 import { Karla } from "next/font/google";
 import "./globals.css";
+import { BookmarkProvider } from "@/app/bookmarkedContext/BookmarkContext";
 
 const karla = Karla({ subsets: ["latin"] });
 
@@ -12,7 +15,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={karla.className}>
-        <div className="app-container">{children}</div>
+        <BookmarkProvider>
+          <div className="app-container">{children}</div>
+        </BookmarkProvider>
       </body>
     </html>
   );
