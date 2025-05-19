@@ -207,24 +207,30 @@ export default function FilteredJobsPage() {
           ))}
         </div>
         <div className="jobsCardsContainer">
-          {filteredJobs.map((job) => (
-            <Link
-              key={job.id}
-              href={`/jobs/${job.id}`}
-              className="jobsCardLink"
-            >
-              <JobListingCard
-                {...job}
-                bookmarked={bookmarkedIds.includes(job.id)}
-                className="jobsCardFullWidth"
-                onApply={() => alert(`Apply for ${job.title}`)}
-                onBookmark={(e) => {
-                  e.preventDefault();
-                  toggleBookmark(job.id);
-                }}
-              />
-            </Link>
-          ))}
+          {filteredJobs.length === 0 ? (
+            <div style={{ textAlign: "center", marginTop: 40 }}>
+              <p>No jobs found.</p>
+            </div>
+          ) : (
+            filteredJobs.map((job) => (
+              <Link
+                key={job.id}
+                href={`/jobs/${job.id}`}
+                className="jobsCardLink"
+              >
+                <JobListingCard
+                  {...job}
+                  bookmarked={bookmarkedIds.includes(job.id)}
+                  className="jobsCardFullWidth"
+                  onApply={() => alert(`Apply for ${job.title}`)}
+                  onBookmark={(e) => {
+                    e.preventDefault();
+                    toggleBookmark(job.id);
+                  }}
+                />
+              </Link>
+            ))
+          )}
         </div>
         <FilterOverlay
           isOpen={showFilterOverlay}

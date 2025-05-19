@@ -9,6 +9,7 @@ import Link from "next/link";
 import Styles from "@/app/globals.css";
 import { useBookmarks } from "@/app/bookmarkedContext/BookmarkContext";
 import FilterOverlay from "@/app/components/FilterOverlay";
+import { useSearchParams } from "next/navigation";
 
 const jobs = [
   {
@@ -52,7 +53,18 @@ const jobs = [
 export default function BookmarkedJobsPage() {
   const { bookmarkedIds, toggleBookmark } = useBookmarks();
   const [showFilterOverlay, setShowFilterOverlay] = React.useState(false);
+  const searchParams = useSearchParams();
+  const location = searchParams.get("location");
+  const style = searchParams.get("style");
   const bookmarkedJobs = jobs.filter((job) => bookmarkedIds.includes(job.id));
+  // Filter by location and style if present
+  const filteredJobs = bookmarkedJobs.filter((job) => {
+    let match = true;
+    if (location) match = match && job.location === location;
+    if (style)
+      match = match && job.title.toLowerCase().includes(style.toLowerCase());
+    return match;
+  });
 
   return (
     <main className="jobsMain">
@@ -169,12 +181,12 @@ export default function BookmarkedJobsPage() {
           <span className="filterLabel">Filter</span>
         </div>
         <div className="jobsCardsContainer">
-          {bookmarkedJobs.length === 0 ? (
+          {filteredJobs.length === 0 ? (
             <div style={{ textAlign: "center", marginTop: 40 }}>
-              <p>No bookmarked jobs found.</p>
+              <p>No jobs found.</p>
             </div>
           ) : (
-            bookmarkedJobs.map((job) => (
+            filteredJobs.map((job) => (
               <Link
                 key={job.id}
                 href={`/jobs/${job.id}`}
