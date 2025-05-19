@@ -8,7 +8,7 @@ export default function SettingsPage() {
         fontFamily: 'sans-serif',
         minHeight: '100vh',
         width: '100vw',
-        background: '#000000',
+        background: '#fff',
         display: 'flex',
         justifyContent: 'center',
       }}
@@ -49,7 +49,7 @@ export default function SettingsPage() {
                 fontSize: 18,
                 fontWeight: 500,
                 color: '#222',
-                background: '000000',
+                background: 'none',
                 border: 'none',
                 padding: '8px 0',
                 cursor: 'pointer',
@@ -70,7 +70,7 @@ export default function SettingsPage() {
                 fontSize: 18,
                 fontWeight: 500,
                 color: '#222',
-                background: '000000',
+                background: 'none',
                 border: 'none',
                 padding: '8px 0',
                 cursor: 'pointer',
@@ -78,7 +78,7 @@ export default function SettingsPage() {
                 width: '100%',
                 transition: 'color 0.2s ease',
                 ':hover': {
-                  color: '#000000',
+                  color: '#007AFF',
                 },
               }}
             >
@@ -91,7 +91,7 @@ export default function SettingsPage() {
                 fontSize: 18,
                 fontWeight: 500,
                 color: '#222',
-                background: '000000',
+                background: 'none',
                 border: 'none',
                 padding: '8px 0',
                 cursor: 'pointer',
@@ -99,7 +99,7 @@ export default function SettingsPage() {
                 width: '100%',
                 transition: 'color 0.2s ease',
                 ':hover': {
-                  color: '#000000',
+                  color: '#007AFF',
                 },
               }}
             >
@@ -112,7 +112,7 @@ export default function SettingsPage() {
                 fontSize: 18,
                 fontWeight: 700,
                 color: '#222',
-                background: '000000',
+                background: 'none',
                 border: 'none',
                 padding: '8px 0',
                 cursor: 'pointer',
@@ -120,7 +120,7 @@ export default function SettingsPage() {
                 width: '100%',
                 transition: 'color 0.2s ease',
                 ':hover': {
-                  color: '#000000',
+                  color: '#007AFF',
                 },
               }}
             >
@@ -137,7 +137,7 @@ export default function SettingsPage() {
               style={{
                 fontSize: 17,
                 color: '#888',
-                background: '000000',
+                background: 'none',
                 border: 'none',
                 padding: '8px 0',
                 cursor: 'pointer',
@@ -145,7 +145,7 @@ export default function SettingsPage() {
                 width: '100%',
                 transition: 'color 0.2s ease',
                 ':hover': {
-                  color: '#000000',
+                  color: '#007AFF',
                 },
               }}
             >
@@ -157,7 +157,7 @@ export default function SettingsPage() {
               style={{
                 fontSize: 17,
                 color: '#000',
-                background: '000000',
+                background: 'none',
                 border: 'none',
                 padding: '8px 0',
                 cursor: 'pointer',
@@ -165,7 +165,7 @@ export default function SettingsPage() {
                 width: '100%',
                 transition: 'color 0.2s ease',
                 ':hover': {
-                  color: '#000000',
+                  color: '#007AFF',
                 },
               }}
             >

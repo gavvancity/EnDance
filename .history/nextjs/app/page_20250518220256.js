@@ -49,7 +49,7 @@ export default function SettingsPage() {
                 fontSize: 18,
                 fontWeight: 500,
                 color: '#222',
-                background: '000000',
+                background: 'none',
                 border: 'none',
                 padding: '8px 0',
                 cursor: 'pointer',
