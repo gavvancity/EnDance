@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./FilterOverlay.module.css";
 
 const LOCATIONS = [
@@ -31,6 +32,7 @@ const DANCE_STYLES = [
 export default function FilterOverlay({ isOpen, onClose }) {
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [selectedStyles, setSelectedStyles] = useState([]);
+  const router = useRouter();
 
   if (!isOpen) return null;
 
@@ -43,6 +45,17 @@ export default function FilterOverlay({ isOpen, onClose }) {
     setSelectedStyles((prev) =>
       prev.includes(style) ? prev.filter((s) => s !== style) : [...prev, style]
     );
+  };
+
+  const handleApply = () => {
+    const params = new URLSearchParams();
+    if (selectedLocations[0]) params.append("location", selectedLocations[0]);
+    if (selectedStyles[0]) params.append("style", selectedStyles[0]);
+    const url = params.toString()
+      ? `/jobs/filtered?${params.toString()}`
+      : "/jobs/filtered";
+    router.push(url);
+    onClose();
   };
 
   return (
@@ -121,7 +134,11 @@ export default function FilterOverlay({ isOpen, onClose }) {
             </div>
           </div>
         </div>
-        <button className={styles.filterOverlay__applyButton} type="button">
+        <button
+          className={styles.filterOverlay__applyButton}
+          type="button"
+          onClick={handleApply}
+        >
           Apply
         </button>
       </div>
