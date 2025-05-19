@@ -37,6 +37,15 @@ const jobs = [
     description:
       "Looking for a passionate and creative Contemporary Dance Instructor to join our studio team. If you love teaching, choreographing...",
   },
+  {
+    id: "4",
+    title: "Hip Hop Crew Choreographer",
+    company: "Gravity Syndicate",
+    location: "Vancouver, BC",
+    postedDate: "May 4th 2025",
+    description:
+      "Urban Dance Crew is looking for an innovative and creative Choreographer to join our dynamic team. The ideal candidate will have...",
+  },
 ];
 
 export default function BookmarkedJobsPage() {
@@ -64,7 +73,10 @@ export default function BookmarkedJobsPage() {
               className="jobsSearchInput"
             />
           </div>
-          <button className="jobsPlusButton">
+          <button
+            className="jobsPlusButton"
+            onClick={() => alert("You are now brought to the Create Post page")}
+          >
             <img
               src="/createpost.png"
               alt="Create Post"
@@ -72,7 +84,10 @@ export default function BookmarkedJobsPage() {
             />
           </button>
           <div style={{ position: "relative" }}>
-            <button className="jobsMessagesButton">
+            <button
+              className="jobsMessagesButton"
+              onClick={() => alert("You are now brought to the Messages page")}
+            >
               <img
                 src="/messages.png"
                 alt="Messages"
@@ -83,7 +98,12 @@ export default function BookmarkedJobsPage() {
         </div>
         {/* Tabs */}
         <div className="jobsTabs">
-          <button className="jobsTab jobsTabSelected">
+          <button
+            className="jobsTab jobsTabSelected"
+            onClick={() =>
+              alert("You are now brought to the Job Listings page")
+            }
+          >
             <img
               src="/jobtab.png"
               alt="Jobs"
@@ -91,7 +111,10 @@ export default function BookmarkedJobsPage() {
             />
             Job Listings
           </button>
-          <button className="jobsTab">
+          <button
+            className="jobsTab"
+            onClick={() => alert("You are now brought to the Auditions page")}
+          >
             <img
               src="/auditiontab.png"
               alt="Auditions"
@@ -99,7 +122,10 @@ export default function BookmarkedJobsPage() {
             />
             Auditions
           </button>
-          <button className="jobsTab">
+          <button
+            className="jobsTab"
+            onClick={() => alert("You are now brought to the Highlights page")}
+          >
             <img
               src="/highlightstab.png"
               alt="Highlights"
@@ -107,7 +133,10 @@ export default function BookmarkedJobsPage() {
             />
             Highlights
           </button>
-          <button className="jobsTab">
+          <button
+            className="jobsTab"
+            onClick={() => alert("You are now brought to the Events page")}
+          >
             <img
               src="/eventstab.png"
               alt="Events"

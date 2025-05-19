@@ -5,9 +5,11 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "@/app/components/hamburgerMenu/HamburgerMenu.module.css";
+import { useRouter } from "next/navigation";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const menuItems = [
     { name: "Home", href: "/", icon: "/homeIcon.png" },
@@ -32,7 +34,15 @@ export default function HamburgerMenu() {
     >
       <div className={styles.menuHeaderRow}>
         {isOpen && (
-          <div className={styles.profileSection}>
+          <div
+            className={styles.profileSection}
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              alert("You are now brought to the Profile page");
+              setIsOpen(false);
+              router.push("/jobs");
+            }}
+          >
             <Image
               src="/alyssaProfilePic.png"
               alt="Alyssa L."
@@ -63,7 +73,12 @@ export default function HamburgerMenu() {
           key={menuItems[0].name}
           href={menuItems[0].href}
           className={styles.menuItem}
-          onClick={() => setIsOpen(false)}
+          onClick={(e) => {
+            e.preventDefault();
+            alert("You are now brought to the Home page");
+            setIsOpen(false);
+            router.push("/jobs");
+          }}
         >
           <div className={styles.menuItemContent}>
             <Image
@@ -77,12 +92,38 @@ export default function HamburgerMenu() {
           </div>
         </Link>
         <div className={styles.subMenuGroup}>
-          {menuItems.slice(1, 5).map((item) => (
+          <Link
+            key={menuItems[1].name}
+            href={menuItems[1].href}
+            className={styles.menuItem}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(false);
+              router.push("/jobs");
+            }}
+          >
+            <div className={styles.menuItemContent}>
+              <Image
+                src={menuItems[1].icon}
+                alt={`${menuItems[1].name} icon`}
+                width={24}
+                height={24}
+                className={styles.menuItemIcon}
+              />
+              <span>{menuItems[1].name}</span>
+            </div>
+          </Link>
+          {menuItems.slice(2, 5).map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className={styles.menuItem}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                alert(`You are now brought to the ${item.name} page`);
+                setIsOpen(false);
+                router.push("/jobs");
+              }}
             >
               <div className={styles.menuItemContent}>
                 <Image
@@ -97,12 +138,17 @@ export default function HamburgerMenu() {
             </Link>
           ))}
         </div>
-        {menuItems.slice(5).map((item) => (
+        {menuItems.slice(5, 7).map((item) => (
           <Link
             key={item.name}
             href={item.href}
             className={styles.menuItem}
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              alert(`You are now brought to the ${item.name} page`);
+              setIsOpen(false);
+              router.push("/jobs");
+            }}
           >
             <div className={styles.menuItemContent}>
               <Image
@@ -116,12 +162,29 @@ export default function HamburgerMenu() {
             </div>
           </Link>
         ))}
+        <Link
+          key={menuItems[7].name}
+          href={menuItems[7].href}
+          className={styles.menuItem}
+          onClick={() => setIsOpen(false)}
+        >
+          <div className={styles.menuItemContent}>
+            <Image
+              src={menuItems[7].icon}
+              alt={`${menuItems[7].name} icon`}
+              width={24}
+              height={24}
+              className={styles.menuItemIcon}
+            />
+            <span>{menuItems[7].name}</span>
+          </div>
+        </Link>
       </div>
       {isOpen && (
         <button
           className={styles.logoutButton}
           onClick={() => {
-            /* handle logout here */
+            alert("You have now logged out");
           }}
         >
           Log Out

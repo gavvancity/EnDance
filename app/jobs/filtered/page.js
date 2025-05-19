@@ -111,7 +111,10 @@ export default function FilteredJobsPage() {
               className="jobsSearchInput"
             />
           </div>
-          <button className="jobsPlusButton">
+          <button
+            className="jobsPlusButton"
+            onClick={() => alert("You are now brought to the Create Post page")}
+          >
             <img
               src="/createpost.png"
               alt="Create Post"
@@ -119,7 +122,10 @@ export default function FilteredJobsPage() {
             />
           </button>
           <div style={{ position: "relative" }}>
-            <button className="jobsMessagesButton">
+            <button
+              className="jobsMessagesButton"
+              onClick={() => alert("You are now brought to the Messages page")}
+            >
               <img
                 src="/messages.png"
                 alt="Messages"
@@ -130,7 +136,12 @@ export default function FilteredJobsPage() {
         </div>
         {/* Tabs */}
         <div className="jobsTabs">
-          <button className="jobsTab jobsTabSelected">
+          <button
+            className="jobsTab jobsTabSelected"
+            onClick={() =>
+              alert("You are now brought to the Job Listings page")
+            }
+          >
             <img
               src="/jobtab.png"
               alt="Jobs"
@@ -138,7 +149,10 @@ export default function FilteredJobsPage() {
             />
             Job Listings
           </button>
-          <button className="jobsTab">
+          <button
+            className="jobsTab"
+            onClick={() => alert("You are now brought to the Auditions page")}
+          >
             <img
               src="/auditiontab.png"
               alt="Auditions"
@@ -146,7 +160,10 @@ export default function FilteredJobsPage() {
             />
             Auditions
           </button>
-          <button className="jobsTab">
+          <button
+            className="jobsTab"
+            onClick={() => alert("You are now brought to the Highlights page")}
+          >
             <img
               src="/highlightstab.png"
               alt="Highlights"
@@ -154,7 +171,10 @@ export default function FilteredJobsPage() {
             />
             Highlights
           </button>
-          <button className="jobsTab">
+          <button
+            className="jobsTab"
+            onClick={() => alert("You are now brought to the Events page")}
+          >
             <img
               src="/eventstab.png"
               alt="Events"
