@@ -177,7 +177,7 @@ export default function SettingsPage() {
               Sign Out
             </button>
           </Link>
-          <div style={{ fontSize: 17, color: '#000', marginLeft: 64, }}>Version 1.1</div>
+          <div style={{ fontSize: 17, color: '#000' }}>Version 1.1</div>
         </div>
       </div>
     </div>

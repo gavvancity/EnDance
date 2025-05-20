@@ -45,7 +45,7 @@ export default function SettingsPage() {
           <Link href="/account-preferences" style={{ textDecoration: 'none' }}>
             <button
               style={{
-                marginLeft: 64,
+                marginLeft: 20,
                 fontSize: 18,
                 fontWeight: 500,
                 color: '#222',
@@ -67,7 +67,6 @@ export default function SettingsPage() {
           <Link href="/signin-security" style={{ textDecoration: 'none' }}>
             <button
               style={{
-                marginLeft: 64,
                 fontSize: 18,
                 fontWeight: 500,
                 color: '#222',
@@ -89,7 +88,6 @@ export default function SettingsPage() {
           <Link href="/visibility" style={{ textDecoration: 'none' }}>
             <button
               style={{
-                marginLeft: 64,
                 fontSize: 18,
                 fontWeight: 500,
                 color: '#222',
@@ -111,7 +109,6 @@ export default function SettingsPage() {
           <Link href="/notifications" style={{ textDecoration: 'none' }}>
             <button
               style={{
-                marginLeft: 64,
                 fontSize: 18,
                 fontWeight: 500,
                 color: '#222',
@@ -138,7 +135,6 @@ export default function SettingsPage() {
           <Link href="/terms" style={{ textDecoration: 'none' }}>
             <button
               style={{
-                marginLeft: 64,
                 fontSize: 17,
                 color: '#888',
                 background: '000000',
@@ -159,7 +155,6 @@ export default function SettingsPage() {
           <Link href="/signout" style={{ textDecoration: 'none' }}>
             <button
               style={{
-                marginLeft: 64,
                 fontSize: 17,
                 color: '#000',
                 background: '000000',
@@ -177,7 +172,7 @@ export default function SettingsPage() {
               Sign Out
             </button>
           </Link>
-          <div style={{ fontSize: 17, color: '#000', marginLeft: 64, }}>Version 1.1</div>
+          <div style={{ fontSize: 17, color: '#000' }}>Version 1.1</div>
         </div>
       </div>
     </div>
