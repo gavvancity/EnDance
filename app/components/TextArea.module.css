@@ -1,0 +1,17 @@
+.textarea {
+  width: 100%;
+  border: 1px solid #d1c4e9;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  margin-bottom: 18px;
+  resize: none;
+  background: #fff;
+  color: #3d2c5a;
+  font-family: 'Karla', sans-serif;
+}
+
+.textarea::placeholder {
+  color: #b39ddb;
+  opacity: 1;
+} 
