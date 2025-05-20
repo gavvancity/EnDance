@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const steps = [
   {
@@ -22,11 +24,15 @@ const steps = [
 
 export default function OnboardingPage() {
   const [step, setStep] = useState(0);
+  const router = useRouter();
 
   const nextStep = () => setStep((s) => Math.min(s + 1, steps.length - 1));
   const prevStep = () => setStep((s) => Math.max(s - 1, 0));
   const skip = () => {
-    // TODO: Redirect to login or main app
+    router.push("/login");
+  };
+  const handleNext = () => {
+    router.push("/login");
   };
 
   return (
@@ -36,7 +42,7 @@ export default function OnboardingPage() {
         minHeight: "100vh",
         background: "#f3ecfa",
         margin: "0 auto",
-        boxShadow: "0 0 24px 0 rgba(0,0,0,0.08)", // optional, for device look
+        boxShadow: "0 0 24px 0 rgba(0,0,0,0.08)",
         display: "flex",
         flexDirection: "column",
         alignItems: "stretch",
@@ -70,7 +76,7 @@ export default function OnboardingPage() {
               height: "180px",
               objectFit: "contain",
               zIndex: 1,
-              marginTop: "64px", // Increased spacing below curtains
+              marginTop: "64px",
             }}
           />
         )}
@@ -111,7 +117,7 @@ export default function OnboardingPage() {
           maxWidth: 430,
           margin: "0 auto",
           padding: "32px 16px 0 16px",
-          marginTop: "48px", // Increased spacing below illustration
+          marginTop: "48px",
         }}
       >
         <h2 className="text-2xl font-semibold mb-2 text-center">
@@ -120,35 +126,58 @@ export default function OnboardingPage() {
         <p className="text-gray-600 text-center mb-8">
           {steps[step].description}
         </p>
-        <div className="flex items-center justify-center gap-2 mb-8">
-          {steps.map((_, i) => (
-            <span
-              key={i}
-              className={`w-4 h-2 rounded-full transition-all duration-200 ${
-                i === step ? "bg-violet-500" : "bg-violet-200"
-              }`}
-            />
-          ))}
-        </div>
-        <div className="flex items-center justify-between w-full mb-4">
+        {/* Progress and arrows */}
+        <div className="flex items-center justify-center gap-4 mb-8 w-full">
+          {/* Left arrow */}
           <button
             onClick={prevStep}
             disabled={step === 0}
-            className="bg-violet-100 text-violet-500 px-6 py-3 rounded-full font-semibold disabled:opacity-30"
+            className={`flex items-center justify-center w-10 h-10 rounded-full ${
+              step === 0
+                ? "bg-violet-100 text-violet-300"
+                : "bg-violet-100 text-violet-500 hover:bg-violet-200"
+            } transition-colors`}
+            style={{ boxShadow: "0 2px 8px 0 rgba(124,92,255,0.08)" }}
+            aria-label="Previous"
           >
-            Back
+            <FiChevronLeft className="w-6 h-6" />
           </button>
-          <button
-            onClick={nextStep}
-            disabled={step === steps.length - 1}
-            className="bg-violet-500 text-white px-6 py-3 rounded-full font-semibold ml-auto disabled:opacity-30"
-          >
-            {step === steps.length - 1 ? "Done" : "Next"}
+          {/* Progress dots */}
+          <div className="flex items-center gap-2">
+            {steps.map((_, i) => (
+              <span
+                key={i}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
+                  i === step ? "bg-violet-500" : "bg-violet-200"
+                }`}
+              />
+            ))}
+          </div>
+          {/* Right arrow or Next button */}
+          {step < steps.length - 1 ? (
+            <button
+              onClick={nextStep}
+              className={`flex items-center justify-center w-10 h-10 rounded-full bg-violet-500 text-white hover:bg-violet-600 transition-colors`}
+              style={{ boxShadow: "0 2px 8px 0 rgba(124,92,255,0.08)" }}
+              aria-label="Next"
+            >
+              <FiChevronRight className="w-6 h-6" />
+            </button>
+          ) : (
+            <button
+              onClick={handleNext}
+              className="flex items-center justify-center px-8 h-10 rounded-full bg-violet-500 text-white font-semibold text-base hover:bg-violet-600 transition-colors ml-4"
+              style={{ boxShadow: "0 2px 8px 0 rgba(124,92,255,0.08)" }}
+            >
+              Next
+            </button>
+          )}
+        </div>
+        <div className="w-full flex justify-end">
+          <button onClick={skip} className="text-xs text-gray-400 underline">
+            Skip
           </button>
         </div>
-        <button onClick={skip} className="text-xs text-gray-400 mt-2 underline">
-          Skip
-        </button>
       </div>
     </div>
   );
