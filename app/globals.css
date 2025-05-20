@@ -1,6 +1,15 @@
 /** @format */
 
 :root {
+  --color-primary-500: #816cc5;
+
+  --color-neutral-900: #616161;
+  --color-neutral-700: #a5a5a5;
+  --color-neutral-500: #e8e8e8;
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+
   --font-h1: "Karla", sans-serif;
   --size-h1: 40px;
   --line-h1: auto;
@@ -124,16 +133,6 @@
   font-family: var(--font-hamburger);
   font-size: var(--size-hamburger);
   line-height: var(--line-hamburger);
-}
-:root {
-  --color-primary-500: #816cc5;
-
-  --color-neutral-900: #616161;
-  --color-neutral-700: #a5a5a5;
-  --color-neutral-500: #e8e8e8;
-
-  --color-black: #000000;
-  --color-white: #ffffff;
 }
 
 body {
