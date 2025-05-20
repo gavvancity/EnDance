@@ -140,27 +140,25 @@ export default function SettingsPage() {
         <div style={{ flex: 1 }} />
         {/* Bottom Options */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginBottom: 32 }}>
-          <Link href="/terms" style={{ textDecoration: 'none' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, paddingTop: 24, marginBottom: 12 }}>
             <button
+              onClick={() => router.push('/')}
               style={{
-                marginLeft: 64,
-                fontSize: 17,
-                color: '#888',
-                background: '000000',
+                background: 'none',
                 border: 'none',
-                padding: '8px 0',
+                fontSize: 32,
                 cursor: 'pointer',
-                textAlign: 'left',
-                width: '100%',
-                transition: 'color 0.2s ease',
-                ':hover': {
-                  color: '#816CC5',
-                },
+                color: '#5E5E5E',
+                padding: 0,
+                marginRight: 4,
+                lineHeight: 1,
               }}
+              aria-label="Back to Settings"
             >
-              Terms of Service
+              &lt;
             </button>
-          </Link>
+            <span style={{ fontSize: 28, fontWeight: 700, color: '#222' }}>Terms of Service</span>
+          </div>
           <Link href="/signout" style={{ textDecoration: 'none' }}>
             <button
               style={{

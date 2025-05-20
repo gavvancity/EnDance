@@ -1,14 +1,10 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Karla } from 'next/font/google';
-import { useRouter } from 'next/navigation';
 
 const karla = Karla({ subsets: ['latin'] });
 
 export default function SettingsPage() {
-  const router = useRouter();
-
   return (
     <div
       style={{
