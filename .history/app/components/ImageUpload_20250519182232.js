@@ -9,7 +9,7 @@ export default function ImageUpload() {
     <div className={styles.container} onClick={() => setImageAdded(true)}>
       {!imageAdded ? (
         <div className={styles.placeholder}>
-          {/* Provided SVG placeholder for image upload */}
+          {/* SVG for image upload */}
           <svg width="165" height="124" viewBox="0 0 165 124" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M146.756 68.3641L137.605 67.3533C130.712 62.2838 124.513 56.1877 117.628 51.1261C115.713 49.7175 114.165 47.903 111.668 49.4708L86.0173 71.1654L84.8844 71.4917L50.8887 34.2464C49.1335 33.1561 47.1868 34.2782 45.7666 35.3924L0.146484 75.9086V8.18256C0.146484 4.50578 5.42814 0.00131503 9.11414 0.0411071L137.007 0.0172318C141.275 -0.317021 146.748 4.30682 146.748 8.57252V68.3561L146.756 68.3641ZM86.496 22.7703C75.3583 24.6644 77.3209 42.539 89.5438 41.2975C101.767 40.056 99.764 20.5101 86.496 22.7703Z" fill="#816CC5"/>
             <path d="M8.71422 105.307C-0.859784 104.113 -0.389063 93.5046 0.352922 86.2466L48.933 42.9369L79.6177 77.1023C82.2027 79.6252 83.5351 82.1639 87.3647 79.657L113.558 57.6838L127.639 68.945L128.022 69.9477C114.69 75.3992 108.396 86.9071 109.305 101.129C109.393 102.522 110.558 104.376 109.497 105.307H8.71422Z" fill="#816CC5"/>
@@ -18,7 +18,7 @@ export default function ImageUpload() {
         </div>
       ) : (
         <div className={styles.fakeImage}>
-          {/* Show the provided chicken image after click */}
+          {/* it will show the image once clicked */}
           <img src="/chicken.png" alt="Zombie riding a chicken" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         </div>
       )}

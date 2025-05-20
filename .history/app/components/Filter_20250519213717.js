@@ -28,4 +28,3 @@ export default function Filter({ icon, label, children, dropdown = false }) {
     </div>
   );
 }
-

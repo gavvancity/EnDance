@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Post</title>
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+  <div class="container">
+    <button class="back-btn">&larr;</button>
+    <h2 class="center">Create Post</h2>
+    <h3 class="center" style="margin: 16px 0 8px;">Add Image</h3>
+    <label class="image-upload">
+      <div class="image-placeholder">
+        <svg width="48" height="48" fill="#fff" viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14zm-7-2a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+        <span class="image-plus">+</span>
+      </div>
+      <input type="file" accept="image/*" style="display: none;" />
+    </label>
+    <div style="margin-bottom: 12px;">
+      <label class="caption-label">Create Captions</label>
+      <textarea class="caption-input" placeholder="Type here..."></textarea>
+    </div>
+    <div class="input-row" style="margin-bottom: 12px;">
+      <span class="input-icon">📍</span>
+      <select class="select-field">
+        <option>Location</option>
+        <option>New York</option>
+        <option>Los Angeles</option>
+        <option>London</option>
+        <option>Paris</option>
+        <option>Tokyo</option>
+        <option>Sydney</option>
+        <option>Berlin</option>
+      </select>
+      <span class="select-arrow">▼</span>
+    </div>
+    <div class="input-row" style="margin-bottom: 24px;">
+      <span class="input-icon">💃</span>
+      <div class="custom-dropdown" id="danceDropdown" style="width:100%;">
+        <div class="dropdown-selected" id="selectedDance">
+          <span class="dropdown-icon">🩰</span>
+          <span class="dropdown-label">Dance Style</span>
+          <span class="dropdown-arrow">&#9660;</span>
+        </div>
+        <div class="dropdown-list" id="dropdownList">
+          <div class="dropdown-option"><span class="dropdown-icon">🩰</span> Ballet</div>
+          <div class="dropdown-option"><span class="dropdown-icon">🕺</span> Jazz</div>
+          <div class="dropdown-option"><span class="dropdown-icon">💃</span> Ballroom</div>
+          <div class="dropdown-option"><span class="dropdown-icon">🤸</span> Hip-Hop</div>
+        </div>
+      </div>
+      <span class="select-arrow">▼</span>
+    </div>
+    <button class="create-btn">Create Post</button>
+  </div>
+  <script>
+  const dropdown = document.getElementById('danceDropdown');
+  const selected = document.getElementById('selectedDance');
+  const list = document.getElementById('dropdownList');
+  const options = list.querySelectorAll('.dropdown-option');
+
+  selected.addEventListener('click', () => {
+    dropdown.classList.toggle('open');
+  });
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      selected.querySelector('.dropdown-label').textContent = option.textContent.trim();
+      selected.querySelector('.dropdown-icon').textContent = option.querySelector('.dropdown-icon').textContent;
+      dropdown.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+  </script>
+</body>
+</html>
