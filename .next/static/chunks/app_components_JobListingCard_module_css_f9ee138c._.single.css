@@ -1,0 +1,77 @@
+/* [project]/app/components/JobListingCard.module.css [app-client] (css) */
+.JobListingCard-module__GkY_AG__card {
+  box-sizing: border-box;
+  background: #fff;
+  border: 2px solid #a9a9a9;
+  border-radius: 16px;
+  flex-direction: column;
+  width: 100%;
+  height: stretch;
+  margin-top: 20px;
+  padding: 10px 10px 20px;
+  font-family: Karla, sans-serif;
+  display: flex;
+  position: relative;
+  box-shadow: 0 2px 6px #00000014;
+}
+
+.JobListingCard-module__GkY_AG__header {
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+}
+
+.JobListingCard-module__GkY_AG__title {
+  margin-bottom: 0;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.JobListingCard-module__GkY_AG__company {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.JobListingCard-module__GkY_AG__location {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.JobListingCard-module__GkY_AG__postedDate {
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.JobListingCard-module__GkY_AG__applyButton {
+  color: #fff;
+  cursor: pointer;
+  background: #816cc5;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 300;
+  box-shadow: 0 4px #564298;
+}
+
+.JobListingCard-module__GkY_AG__description {
+  color: #222;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.JobListingCard-module__GkY_AG__bookmarkButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-top: 8px;
+  margin-right: 8px;
+  padding: 0;
+}
+
+/*# sourceMappingURL=app_components_JobListingCard_module_css_f9ee138c._.single.css.map*/

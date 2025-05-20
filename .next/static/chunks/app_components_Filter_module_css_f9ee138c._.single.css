@@ -1,0 +1,67 @@
+/* [project]/app/components/Filter.module.css [app-client] (css) */
+.Filter-module__jFDoiq__filter {
+  background: #f2f0f9;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.Filter-module__jFDoiq__filterHeader {
+  cursor: pointer;
+  user-select: none;
+  z-index: 201;
+  background: #f2f0f9;
+  align-items: center;
+  padding: 10px 12px;
+  display: flex;
+  position: relative;
+}
+
+.Filter-module__jFDoiq__icon {
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: flex;
+}
+
+.Filter-module__jFDoiq__label {
+  color: #3d2c5a;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.Filter-module__jFDoiq__arrow {
+  margin-left: 8px;
+  font-size: 1.1rem;
+}
+
+.Filter-module__jFDoiq__dropdown {
+  background: #f2f0f9;
+  border: none;
+  border-radius: 8px;
+  margin-top: 4px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000000a;
+}
+
+.Filter-module__jFDoiq__dropdownItem {
+  cursor: pointer;
+  color: #181028;
+  white-space: nowrap;
+  background: #f2f0f9;
+  border-bottom: 1px solid #dad2ec;
+  border-radius: 0;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  font-family: inherit;
+  font-size: 1.08rem;
+  font-weight: 500;
+  transition: none;
+  display: flex;
+}
+
+/*# sourceMappingURL=app_components_Filter_module_css_f9ee138c._.single.css.map*/

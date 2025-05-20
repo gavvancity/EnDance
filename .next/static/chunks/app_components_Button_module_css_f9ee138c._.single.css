@@ -1,0 +1,21 @@
+/* [project]/app/components/Button.module.css [app-client] (css) */
+.Button-module__Nm1E8a__button {
+  color: #fff;
+  cursor: pointer;
+  background: #8d6fd1;
+  border: none;
+  border-radius: 16px;
+  width: 100%;
+  margin-top: 32px;
+  padding: 16px 32px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: background .2s;
+  box-shadow: 0 4px #6c4eb6;
+}
+
+.Button-module__Nm1E8a__button:active {
+  background: #6c4eb6;
+}
+
+/*# sourceMappingURL=app_components_Button_module_css_f9ee138c._.single.css.map*/

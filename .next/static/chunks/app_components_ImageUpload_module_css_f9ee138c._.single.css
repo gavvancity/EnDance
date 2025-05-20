@@ -1,0 +1,30 @@
+/* [project]/app/components/ImageUpload.module.css [app-client] (css) */
+.ImageUpload-module__5p9-na__container {
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0 16px;
+  display: flex;
+}
+
+.ImageUpload-module__5p9-na__placeholder, .ImageUpload-module__5p9-na__fakeImage {
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 165px;
+  height: 124px;
+  margin-left: 20px;
+  transition: background .2s;
+  display: flex;
+  position: relative;
+}
+
+.ImageUpload-module__5p9-na__icon {
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  display: flex;
+}
+
+/*# sourceMappingURL=app_components_ImageUpload_module_css_f9ee138c._.single.css.map*/

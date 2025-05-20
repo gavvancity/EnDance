@@ -1,0 +1,20 @@
+/* [project]/app/components/TextArea.module.css [app-client] (css) */
+.TextArea-module__q2YuDW__textarea {
+  resize: none;
+  color: #3d2c5a;
+  background: #fff;
+  border: 1px solid #d1c4e9;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 12px;
+  font-family: Karla, sans-serif;
+  font-size: 1rem;
+}
+
+.TextArea-module__q2YuDW__textarea::placeholder {
+  color: #b39ddb;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=app_components_TextArea_module_css_f9ee138c._.single.css.map*/

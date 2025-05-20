@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Mateu/OneDrive/Desktop/endance/app/create-post/CreatePost.jsx"],"sourcesContent":["export default function CreatePost() {\r\n  return (\r\n    <div>\r\n      <h2>Create Post Component</h2>\r\n      {/* Your form or content here */}\r\n    </div>\r\n  );\r\n} "],"names":[],"mappings":";;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC;sBAAG;;;;;;;;;;;AAIV","debugId":null}},
+    {"offset": {"line": 33, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Mateu/OneDrive/Desktop/endance/app/create-post/page.js"],"sourcesContent":["\"use client\";\r\nimport CreatePost from './CreatePost';\r\n\r\nexport default function CreatePostPage() {\r\n  return (\r\n    <div>\r\n      <CreatePost />\r\n    </div>\r\n  );\r\n} "],"names":[],"mappings":";;;;AACA;AADA;;;AAGe,SAAS;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC,oIAAA,CAAA,UAAU;;;;;;;;;;AAGjB","debugId":null}},
+    {"offset": {"line": 59, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Mateu/OneDrive/Desktop/endance/node_modules/next/src/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-ssr'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,4HAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0],"debugId":null}}]
+}

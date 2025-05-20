@@ -1,0 +1,19 @@
+{
+  "app": {
+    "[project]/app/_not-found/page": [
+      "static/media/qkBbXvYC6trAT7RVLtyU5rZP-s.p.1f82334a.woff2"
+    ],
+    "[project]/app/create-post/page": [
+      "static/media/qkBbXvYC6trAT7RVLtyU5rZP-s.p.1f82334a.woff2"
+    ],
+    "[project]/app/jobs/page": [
+      "static/media/qkBbXvYC6trAT7RVLtyU5rZP-s.p.1f82334a.woff2"
+    ],
+    "[project]/app/page": [
+      "static/media/qkBbXvYC6trAT7RVLtyU5rZP-s.p.1f82334a.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

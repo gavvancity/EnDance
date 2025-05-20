@@ -1,0 +1,45 @@
+/* [project]/app/create-post/CreatePost.module.css [app-client] (css) */
+.CreatePost-module__HJCTFq__dropdown {
+  background: #f2f0f9;
+  border: none;
+  border-radius: 8px;
+  margin-top: 4px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000000a;
+}
+
+.CreatePost-module__HJCTFq__dropdownItem {
+  cursor: pointer;
+  color: #181028;
+  white-space: nowrap;
+  background: #f2f0f9;
+  border-bottom: 1px solid #dad2ec;
+  border-radius: 0;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  font-family: inherit;
+  font-size: 1.08rem;
+  font-weight: 500;
+  transition: none;
+  display: flex;
+}
+
+.CreatePost-module__HJCTFq__dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.CreatePost-module__HJCTFq__dropdownItem.CreatePost-module__HJCTFq__selected, .CreatePost-module__HJCTFq__dropdownItem:hover {
+  background: #f2f0f9;
+}
+
+.CreatePost-module__HJCTFq__dropdownIcon {
+  align-items: center;
+  min-width: 22px;
+  min-height: 22px;
+  font-size: 1.3rem;
+  display: flex;
+}
+
+/*# sourceMappingURL=app_create-post_CreatePost_module_css_f9ee138c._.single.css.map*/

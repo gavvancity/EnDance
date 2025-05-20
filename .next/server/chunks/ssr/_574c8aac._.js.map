@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Mateu/OneDrive/Desktop/endance/app/create-post/page.js"],"sourcesContent":["\"use client\";\r\nimport CreatePost from '../components/CreatePost';\r\n\r\nexport default function CreatePostPage() {\r\n  return (\r\n    <div>\r\n      <CreatePost />\r\n    </div>\r\n  );\r\n} "],"names":[],"mappings":";;;;;;;;;AAAA;;;AAGe,SAAS;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC;;;;;;;;;;AAGP","debugId":null}},
+    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Mateu/OneDrive/Desktop/endance/node_modules/next/src/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-ssr'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,4HAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0],"debugId":null}}]
+}
