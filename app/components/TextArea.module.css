@@ -8,6 +8,7 @@
   resize: none;
   background: #fff;
   color: #3d2c5a;
+  font-family: 'Karla', sans-serif;
 }
 
 .textarea::placeholder {
