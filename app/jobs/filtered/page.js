@@ -113,7 +113,7 @@ export default function FilteredJobsPage() {
           </div>
           <button
             className="jobsPlusButton"
-            onClick={() => alert("You are now brought to the Create Post page")}
+            onClick={() => router.push("/create-post")}
           >
             <img
               src="/createpost.png"

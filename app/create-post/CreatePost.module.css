@@ -45,3 +45,7 @@
   min-width: 22px;      /* Ensures consistent icon spacing */
   min-height: 22px;
 } 
+
+.back-button-container {
+  z-index: 1000;
+}

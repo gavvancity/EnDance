@@ -3,6 +3,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import JobListingCard from "@/app/components/JobListingCard";
 import HamburgerMenu from "@/app/components/hamburgerMenu/HamburgerMenu";
 import FilterOverlay from "@/app/components/FilterOverlay";
@@ -54,6 +55,7 @@ const initialJobs = [
 ];
 
 export default function JobsPage() {
+  const router = useRouter();
   const [jobs] = useState(initialJobs);
   const [showFilterOverlay, setShowFilterOverlay] = useState(false);
   const { bookmarkedIds, toggleBookmark } = useBookmarks();
@@ -81,7 +83,7 @@ export default function JobsPage() {
           </div>
           <button
             className="jobsPlusButton"
-            onClick={() => alert("You are now brought to the Create Post page")}
+            onClick={() => router.push("/create-post")}
           >
             <img
               src="/createpost.png"

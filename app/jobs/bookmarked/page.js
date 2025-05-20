@@ -9,7 +9,7 @@ import Link from "next/link";
 import Styles from "@/app/globals.css";
 import { useBookmarks } from "@/app/bookmarkedContext/BookmarkContext";
 import FilterOverlay from "@/app/components/FilterOverlay";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const jobs = [
   {
@@ -51,6 +51,7 @@ const jobs = [
 ];
 
 export default function BookmarkedJobsPage() {
+  const router = useRouter();
   const { bookmarkedIds, toggleBookmark } = useBookmarks();
   const [showFilterOverlay, setShowFilterOverlay] = React.useState(false);
   const searchParams = useSearchParams();
@@ -89,7 +90,7 @@ export default function BookmarkedJobsPage() {
           </div>
           <button
             className="jobsPlusButton"
-            onClick={() => alert("You are now brought to the Create Post page")}
+            onClick={() => router.push("/create-post")}
           >
             <img
               src="/createpost.png"
