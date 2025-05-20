@@ -30,7 +30,7 @@ export default function SettingsPage() {
         }}
       >
         {/* Profile and Settings title */}
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: 32, marginTop: 156 }}>
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: 32, marginTop: 96 }}>
           <Image
             src="/image 8.png"
             alt="Profile"
@@ -109,7 +109,7 @@ export default function SettingsPage() {
             <button
               style={{
                 fontSize: 18,
-                fontWeight: 500,
+                fontWeight: 700,
                 color: '#222',
                 background: '000000',
                 border: 'none',

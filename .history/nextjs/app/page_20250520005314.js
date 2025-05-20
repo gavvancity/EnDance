@@ -109,7 +109,7 @@ export default function SettingsPage() {
             <button
               style={{
                 fontSize: 18,
-                fontWeight: 500,
+                fontWeight: 700,
                 color: '#222',
                 background: '000000',
                 border: 'none',
