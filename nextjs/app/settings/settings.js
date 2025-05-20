@@ -1,7 +1,7 @@
 import React from 'react';
-import Avatar from '../components/Avatar/Avatar';
-import SectionTitle from '../components/SectionTitle/SectionTitle';
-import MenuItem from '../components/MenuItem/MenuItem';
+import Avatar from '../../../components/Avatar/Avatar';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import MenuItem from '../../../components/MenuItem/MenuItem';
 
 const avatarUrl = 'https://randomuser.me/api/portraits/women/44.jpg'; // Example avatar
 
