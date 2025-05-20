@@ -99,7 +99,7 @@
 
 .hamburgerMenuOverlay {
   position: absolute;
-  width: 98px;
+  width: 103px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 998;
