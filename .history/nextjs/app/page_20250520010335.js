@@ -14,7 +14,6 @@ export default function SettingsPage() {
         background: '#000000',
         display: 'flex',
         justifyContent: 'center',
-        color: '#5E5E5E',
       }}
     >
       <div
@@ -56,7 +55,7 @@ export default function SettingsPage() {
                 cursor: 'pointer',
                 textAlign: 'left',
                 width: '100%',
-                transition: 'color 0.2s ease',
+                transition: 'color 0.5s ease',
                 ':hover': {
                   color: '#816CC5',
                 },
@@ -162,7 +161,7 @@ export default function SettingsPage() {
               style={{
                 marginLeft: 64,
                 fontSize: 17,
-                color: '#5E5E5E',
+                color: '#000',
                 background: '000000',
                 border: 'none',
                 padding: '8px 0',
@@ -178,7 +177,7 @@ export default function SettingsPage() {
               Sign Out
             </button>
           </Link>
-          <div style={{ fontSize: 17, color: '#5E5E5E', marginLeft: 64, }}>Version 1.1</div>
+          <div style={{ fontSize: 17, color: '#000', marginLeft: 64, }}>Version 1.1</div>
         </div>
       </div>
     </div>

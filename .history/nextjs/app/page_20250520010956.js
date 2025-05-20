@@ -14,7 +14,6 @@ export default function SettingsPage() {
         background: '#000000',
         display: 'flex',
         justifyContent: 'center',
-        color: '#5E5E5E',
       }}
     >
       <div
