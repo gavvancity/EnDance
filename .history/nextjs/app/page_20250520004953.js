@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Karla } from 'next/font/google';
-
-const karla = Karla({ subsets: ['latin'] });
 
 export default function SettingsPage() {
   return (
     <div
       style={{
-        fontFamily: karla.style.fontFamily,
+        fontFamily: 'sans-serif',
         minHeight: '100vh',
         width: '100vw',
         background: '#000000',
