@@ -47,7 +47,7 @@ export default function SettingsPage() {
         </div>
         {/* Settings Options */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-          <Link href="/terms" style={{ textDecoration: 'none' }}>
+          <Link href="/account-preferences" style={{ textDecoration: 'none' }}>
             <button
               style={{
                 marginLeft: 64,
@@ -69,7 +69,7 @@ export default function SettingsPage() {
               Account preferences
             </button>
           </Link>
-          <Link href="/terms" style={{ textDecoration: 'none' }}>
+          <Link href="/signin-security" style={{ textDecoration: 'none' }}>
             <button
               style={{
                 marginLeft: 64,
@@ -91,7 +91,7 @@ export default function SettingsPage() {
               Sign in & security
             </button>
           </Link>
-          <Link href="/terms" style={{ textDecoration: 'none' }}>
+          <Link href="/visibility" style={{ textDecoration: 'none' }}>
             <button
               style={{
                 marginLeft: 64,
@@ -113,7 +113,7 @@ export default function SettingsPage() {
               Visibility
             </button>
           </Link>
-          <Link href="/terms" style={{ textDecoration: 'none' }}>
+          <Link href="/notifications" style={{ textDecoration: 'none' }}>
             <button
               style={{
                 marginLeft: 64,
@@ -161,7 +161,7 @@ export default function SettingsPage() {
               Terms of Service
             </button>
           </Link>
-          <Link href="/terms" style={{ textDecoration: 'none' }}>
+          <Link href="/signout" style={{ textDecoration: 'none' }}>
             <button
               style={{
                 marginLeft: 64,
