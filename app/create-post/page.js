@@ -4,4 +4,6 @@ import ImageUpload from '../components/ImageUpload';
 import TextArea from '../components/TextArea';
 import Filter from '../components/Filter';
 import Button from '../components/Button';
+import styles from './CreatePost.module.css';
+
 
