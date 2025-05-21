@@ -1,0 +1,77 @@
+/** @format */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  font-family: "Karla", sans-serif;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+  height: stretch;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  position: relative;
+  border: 2px solid #a9a9a9;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.company {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.location {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.postedDate {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.applyButton {
+  width: 100%;
+  background: #816cc5;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 0;
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 0 #564298;
+  cursor: pointer;
+}
+
+.description {
+  color: #222;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.bookmarkButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 8px;
+  margin-right: 8px;
+}
