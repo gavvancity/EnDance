@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0 16px 0;
+  cursor: pointer;
+}
+
+.placeholder, .fakeImage {
+  width: 165px;
+  height: 124px;
+  /* background: #8d6fd1; */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.2s;
+  margin-left: 20px;
+}
+
+
+.icon {
+  font-size: 2.5rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
