@@ -1,0 +1,165 @@
+/** @format */
+
+.filterOverlay__buttonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.filterOverlayBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.filterOverlay__container {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 440px;
+  height: 100vh;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+  background: transparent;
+}
+
+.filterOverlay {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 0;
+  box-sizing: border-box;
+  padding: 24px 24px 0 24px;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 56px;
+}
+
+.filterOverlay__headerRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  height: 48px;
+}
+
+.filterOverlay__heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: #666;
+  letter-spacing: 1px;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.filterOverlay__sectionLabel {
+  font-weight: 700;
+  font-size: 25px;
+  color: #666;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.filterOverlay__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-bottom: 36px;
+}
+
+.filterOverlay__toggleButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-size: 20px;
+  color: #555;
+  font-weight: 500;
+  padding: 2px 12px 2px 2px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  min-height: 32px;
+}
+
+.filterOverlay__toggleButton.selected {
+  background: #fff;
+  color: #222;
+  border-color: transparent;
+}
+
+.filterOverlay__radio {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #666;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.filterOverlay__toggleButton.selected .filterOverlay__radio {
+  border-color: #666;
+}
+
+.filterOverlay__radioInner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.filterOverlay__toggleButton.selected .filterOverlay__radioInner {
+  background: #666;
+}
+
+.filterOverlay__applyButton {
+  width: 80%;
+  margin: 32px auto 15px auto;
+  background: #816cc5;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 0;
+  box-shadow: 0 2px 0 #564298;
+  cursor: pointer;
+  display: block;
+  transition: background 0.2s;
+}
+
+.filterOverlay__closeButton {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: #666;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+  line-height: 1;
+  margin-left: 16px;
+}
